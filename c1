@@ -1,0 +1,222 @@
+# Chapter 1: Introduction to Software Engineering
+
+## 1. Lesson Objectives / 课程目标
+
+- Differentiate between Generic and Bespoke software products.
+- 区分通用软件产品与定制软件产品。
+- Describe what software engineering is and its importance.
+- 描述什么是软件工程及其重要性。
+- Discuss the key challenges of software engineering and professional responsibilities for software engineers.
+- 讨论软件工程的主要挑战以及软件工程师的职业责任。
+
+---
+
+## 2. Definition & Functions of Software / 软件的定义与功能
+
+### 2.1 Definition / 软件定义
+- Software consists of computer programs that control the workings of the computer hardware and program documentation used to explain the programs to the user.
+- 软件由控制计算机硬件运行的计算机程序以及用于向用户解释程序的程序文档组成。
+- IEEE defines software as a collection of programs, instructions, and data that, when executed, produce a desired result.
+- IEEE 将软件定义为在运行时能产生预期结果的程序、指令和数据的集合。
+
+### 2.2 Benefits of Software / 软件的好处
+- Automation and Efficiency: Software automates repetitive and time-consuming tasks, leading to increased efficiency and productivity.
+- 自动化与效率：软件能将重复且耗时的任务自动化，从而提高效率和生产力。
+- Accuracy and Reliability: Software eliminates human errors and inconsistencies that can occur in manual processes.
+- 准确性与可靠性：软件消除了手动操作过程中可能出现的误操作和不一致性。
+- Scalability and Flexibility: Software can be scaled up or down to meet changing demands.
+- 可扩展性与灵活性：软件可以根据不断变化的需求扩大或缩小规模。
+- Improved Decision Making: Software enables data collection, analysis, and visualization for informed decision-making.
+- 改善决策：软件支持数据收集、分析和可视化，为明智的决策提供依据。
+- Innovation and Competitive Advantage: Developing new software applications introduces innovative products or services.
+- 创新与竞争优势：开发新的软件应用可以引入创新的产品或服务。
+- Cost Savings: Software automates tasks, reduces paperwork, optimizes resource allocation, and eliminates physical storage needs.
+- 节约成本：软件能够自动化任务、减少纸质文档、优化资源分配并消除物理存储需求。
+
+### 2.3 Functions of Software / 软件的功能
+- Manage the computer resources of the organisation.
+- 管理组织的计算机资源。
+- Provide tools for human beings to take advantage of these resources.
+- 提供工具供人类利用这些资源。
+- Act as an intermediary between organisations and stored information.
+- 充当组织与存储信息之间的中介。
+
+### 2.4 Characteristics of Software / 软件的特征
+- Software is developed or engineered; it is not manufactured in the classical sense.
+- 软件是被开发或工程化设计出来的，而不是传统意义上的制造出来的。
+- Software doesn't "wear out".
+- 软件不会“磨损”。
+- Most software continues to be custom built.
+- 大多数软件仍然需要定制构建。
+
+---
+
+## 3. Types of Software & Application Software / 软件及应用软件分类
+
+### 3.1 System Software vs. Application Software / 系统软件与应用软件
+
+#### System Software / 系统软件
+- The system software is a collection of programs designed to operate, control, and extend the processing capabilities of the computer itself.
+- 系统软件是旨在运行、控制和扩展计算机本身处理能力的程序集合。
+- Types of System Software:
+- 系统软件的类型：
+  - System Control Programs: Control execution of programs, manage storage and processing resources (e.g., OS).
+  - 系统控制程序：控制程序的执行，管理存储和处理资源（例如：操作系统）。
+  - System Support Programs: Provide routine service functions to other programs and users (e.g., Utility Programs).
+  - 系统支持程序：向其他程序和用户提供日常服务功能（例如：实用工具程序）。
+  - System Development Programs: Assist in the creation of programs (e.g., Compilers, Interpreters, Assemblers).
+  - 系统开发程序：协助创建程序（例如：编译器、解释器、汇编器）。
+
+#### Application Software / 应用软件
+- Application software is computing software designed to carry out a specific task other than relating to the operation of the computer itself, typically used by end-users.
+- 应用软件是专为执行特定任务而非处理计算机本身运行而设计的计算软件，通常供终端用户使用。
+- Three types of Application Software:
+- 应用软件的三种形式：
+  - Desktop App: Applications that run on personal computers and laptops.
+  - 桌面应用：在个人电脑和笔记本电脑上运行的应用。
+  - Web App: Applications accessed over a network such as the Internet or an intranet.
+  - Web 应用：通过网络（如因特网或内网）访问的应用。
+  - Mobile App: Software applications designed to run on smartphones and tablets.
+  - 移动应用：旨在智能手机和平板电脑上运行的软件应用。
+
+### 3.2 Generic vs. Bespoke Products / 通用产品与定制产品
+
+- Generic products: Stand-alone systems that are marketed and sold to any customer who wishes to buy them.
+- 通用产品：面向市场公开销售并出售给任何意向客户的独立系统。
+  - Examples: PC software like graphics programs, CAD software, MS Word.
+  - 示例：图形软件、CAD软件、MS Word 等 PC 软件。
+- Bespoke (Customized) products: Software that is commissioned by a specific customer to meet their own needs.
+- 定制产品：由特定客户委托开发以满足其自身需求的软件。
+  - Examples: Air traffic control software, banking services, taxi booking system.
+  - 示例：空中交通管制软件、银行服务系统、出租车预约系统。
+
+---
+
+## 4. Fundamental Software Process Activities / 软件过程的基本活动[cite: 1]
+
+- Software Specification: Define what system should do by defining functional and non-functional requirements and constraints.
+- 软件规约：通过定义功能与非功能需求及约束，明确系统应该做什么[cite: 1]。
+- Software Development: Build the software by designing, coding, and implementing a system based on requirements.
+- 软件开发：基于需求进行设计、编码与实现，从而构建软件[cite: 1]。
+- Software Validation: Verify if the software meets requirements by evaluating and testing to ensure it functions as intended.
+- 软件确认：通过评估与测试验证软件是否符合需求，确保其按预期运行[cite: 1]。
+- Software Evolution: Enhancement of software post-deployment to fix defects, adapt to changes, or improve performance.
+- 软件演化：在部署后对软件进行修改与增强，以修复缺陷、适应变化或提升性能[cite: 1]。
+
+---
+
+## 5. Attributes of Good Software / 优秀软件的属性[cite: 1]
+
+### 5.1 User's View / 用户视角
+- Availability: The probability that a system will work as required when required.
+- 可用性：系统在需要时按要求工作的概率。
+- Functionality: The system will perform the functions that it is required to do.
+- 功能性：系统能够执行所要求的全部功能。
+- Efficiency: The system performs functions efficiently in terms of time and resources.
+- 高效性：系统在时间和资源利用方面能够高效地执行功能。
+- Reliability: Not prone to hardware or software failure, delivering functionality as needed.
+- 可靠性：不易发生硬件或软件故障，能稳定交付功能。
+- Secure: Protection against errors, unauthorized access, or attacks to maintain confidentiality, integrity, and availability[cite: 1].
+- 安全性：抵御错误、未经授权的访问或攻击，以维护保密性、完整性和可用性[cite: 1]。
+- Flexible: Capability of being adapted to new uses, environments, or platforms[cite: 1].
+- 灵活性：能够适应新的用途、环境或平台[cite: 1]。
+- Usability: Provides users with a satisfying experience.
+- 易用性：为用户提供满意的操作体验。
+
+### 5.2 Developer's View / 开发者视角[cite: 1]
+- Maintainable: Refers to ease of modification, debugging, and enhancement via high cohesion, low coupling, and modularity[cite: 1].
+- 可维护性：指通过高内聚、低耦合、模块化和完整文档实现修改、调试和增强的难易程度[cite: 1]。
+- Reusable: Degree to which components can be reused across systems with minimal modification[cite: 1].
+- 可复用性：组件只需极少修改即可在不同系统或上下文中复用的程度[cite: 1]。
+- Manageable: Ability to plan, monitor, and control a project with predictable planning and clear scopes[cite: 1].
+- 可管理性：通过可预测的计划、清晰的范围和有效的监控来规划与控制项目的能力[cite: 1]。
+- Buildable: Ease and efficiency of compiling, linking, packaging, and preparing software for deployment[cite: 1].
+- 可构建性：编译、链接、打包和准备部署软件的简易度与效率[cite: 1]。
+
+---
+
+## 6. What is Software Engineering? / 什么是软件工程？
+
+- Software engineering is an engineering discipline which is concerned with all aspects of software production from early system specification to post-deployment maintenance.
+- 软件工程是一门工程学科，涉及从早期系统规约到部署后系统维护的软件生产的所有方面。
+- Engineering Discipline: Software engineers apply theories, tools, and methods to discover solutions within constraints.
+- 工程学科：软件工程师应用理论、工具和方法在公司约束范围内寻找解决方案。
+- All Aspects of Production: Includes technical processes, software project management, tool development, and methods.
+- 生产的所有方面：包括技术过程、软件项目管理、工具开发以及支持软件生产的方法。
+
+### 6.1 Four Layers of Software Engineering / 软件工程的四个层次
+- Quality Focus: An organizational commitment to quality that fosters continuous process improvement.
+- 质量关注：对质量的组织承诺，促进持续的过程改进。
+- Process: Defines a framework for key process areas (KPAs) for effective tech delivery.
+- 过程：定义了有效交付软件工程技术所需关键过程领域 (KPA) 的框架。
+- Methods: Organized ways of producing software, including process suggestions, notations, and design guidelines.
+- 方法：生产软件的组织化方式，包括过程建议、表示法、规则和设计指南。
+- Tools: Provide automated and semi-automated support for the process and methods.
+- 工具：为过程和方法提供自动化和半自动化的支持。
+
+### 6.2 Importance & Cost / 重要性与成本
+- Expenditure on software represents a significant fraction of GNP in all developed countries.
+- 在所有发达国家中，软件支出占国民生产总值 (GNP) 的很大一部分。
+- Software costs often dominate computer system costs (software on a PC often costs more than hardware).
+- 软件成本通常占计算机系统成本的主导地位（PC 上的软件成本往往高于硬件成本）。
+- Software costs more to maintain than it does to develop.
+- 软件的维护成本通常高于开发成本。
+
+---
+
+## 7. Key Challenges of Software Engineering / 软件工程的主要挑战
+
+- Legacy Challenge: Maintaining and updating legacy software to avoid excessive costs while maintaining services.
+- 遗留系统挑战：维护和更新遗留软件，在避免过高成本的同时保证核心业务服务正常交付。
+- Heterogeneity / Diversity Challenge: Building dependable software flexible enough to cope with different computer and support systems.
+- 异构性/多样性挑战：构建足够灵活且可靠的软件，以适应不同类型的计算机及支持系统。
+- Delivery Challenge: Shortening delivery times for large, complex systems without compromising system quality.
+- 交付挑战：在不牺牲系统质量的前提下，缩短大型复杂系统的交付时间。
+
+---
+
+## 8. Software Engineering vs. Systems Engineering / 软件工程 vs. 系统工程
+
+- Systems engineering is an interdisciplinary field focusing on designing and managing complex engineering projects.
+- 系统工程是一门跨学科工程领域，侧重于如何设计和管理复杂的工程项目。
+- Systems engineering deals with all aspects of computer-based system development, including hardware, software, people, database, and networks.
+- 系统工程涉及基于计算机系统开发的各个方面，包括硬件、软件、人员、数据库和网络。
+- Software engineering is a part of systems engineering.
+- 软件工程是系统工程的一个组成部分。
+
+---
+
+## 9. Professional & Ethical Responsibility / 职业与道德责任
+
+- Software engineering involves wider responsibilities than simply applying technical skills.
+- 软件工程包含比单纯应用技术技能更广泛的责任。
+- Software engineers must behave in an honest and ethically responsible way.
+- 软件工程师必须以诚信和恪守职业道德的方式行事。
+
+### 9.1 Key Issues / 核心议题
+- Confidentiality: Respect the confidentiality of employers or clients regardless of formal agreements.
+- 保密性：无论是否签署正式保密协议，工程师通常都应尊重雇主或客户的保密性。
+- Competence: Do not misrepresent competence level or knowingly accept work outwith competence.
+- 能力：工程师不应虚报自己的能力水平，也不应故意接受超出自身能力范围的工作。
+- Intellectual Property Rights: Protect patents, copyrights, and intellectual property.
+- 知识产权：保护专利、版权及知识产权。
+- Computer Misuse: Do not use technical skills to misuse other people's computers.
+- 计算机滥用：不得利用技术技能滥用他人的计算机系统。
+
+### 9.2 ACM/IEEE Code of Ethics (8 Principles) / ACM/IEEE 道德准则（八项原则）
+1. Public: Act consistently with the public interest.
+   公众：行为应与公众利益保持一致。
+2. Client and Employer: Act in a manner that is in the best interests of client and employer, consistent with public interest.
+   客户与雇主：在符合公众利益的前提下，采取最符合客户和雇主利益的行为。
+3. Product: Ensure products meet the highest professional standards possible.
+   产品：确保产品及相关修改符合尽可能高的专业标准。
+4. Judgment: Maintain integrity and independence in professional judgment.
+   判断力：在专业判断中保持完整性与独立性。
+5. Management: Managers shall subscribe to and promote an ethical approach to management.
+   管理：管理者和领导者应认同并推广符合道德规范的管理方法。
+6. Profession: Advance the integrity and reputation of the profession consistent with public interest.
+   职业：在符合公众利益的前提下，提升本职业的声誉与完整性。
+7. Colleagues: Be fair to and supportive of colleagues.
+   同事：对待同事要公平且给予支持。
+8. Self: Participate in lifelong learning and promote an ethical approach to practice.
+   自身：参与终身学习，并推广符合道德规范的具体实践。

@@ -1,0 +1,117 @@
+# Software Project Management & Testing Notes (软件项目管理与测试笔记)
+
+---
+
+## 1. Project Communication & Group Organization (项目沟通与团队组织)
+
+### Effective Communication (有效沟通)
+- Effective communication is one of the vital factors to ensure project success.[cite: 1]
+  有效的沟通是确保项目成功的关键要素之一。[cite: 1]
+- It promotes effective activities coordination, resolves conflicts among team members, provides progress updates from time to time, and facilitates collaborative decision-making processes.[cite: 1]
+  它能促进有效的活动协调，解决团队成员之间的冲突，定期更新项目进度，并推动协作决策过程。[cite: 1]
+- A proper communication plan should normally be established at the early stage of the project.
+  通常应在项目的早期阶段制定一份妥善的沟通计划。
+- It includes communication methods, communication frequency, communication mode, and other aspects to ensure project success.
+  它包括沟通方法、沟通频率、沟通模式等内容，以确保项目的成功。
+
+### Group Organization (团队组织)
+- Group organization involves the structuring and coordination of project tasks, roles, and responsibilities within the project team to achieve project goals efficiently.
+  团队组织涉及在项目团队内对项目任务、角色和职责进行结构化与协调，从而高效地实现项目目标。
+- The Project Manager (PM) needs to set a clear and measurable goal for the project.
+  项目经理 (PM) 需要为项目设定明确且可衡量的目标。
+- The PM must define a definite project scope and assign the right staff with the right skills to the right roles and tasks.
+  项目经理必须明确具体的项目范围，并将具备合适技能的人员分配到合适的角色和任务中。
+- Group organization includes the establishment of the list of tasks (Work Breakdown Structure - WBS), task scheduling, and the setup of monitoring and control mechanisms to ensure all planned tasks remain on track.
+  团队组织包括建立待执行任务清单（工作分解结构 - WBS）、任务进度安排，以及建立监控机制，以确保所有计划任务都在正轨上运行。
+
+---
+
+## 2. Testing Techniques (测试技术)
+
+### Proactive Testing vs. Reactive Testing (主动测试与被动测试比较)
+
+| Criteria (标准) | Proactive Testing (主动测试) | Reactive Testing (被动测试) |
+| :--- | :--- | :--- |
+| **When (执行时间)** | Conducted early in the development lifecycle.<br>在开发生命周期的早期执行。 | Conducted after the system or component is developed.<br>在系统或组件开发完成后执行。 |
+| **Focus (核心关注)** | Preventing defects.<br>预防缺陷。 | Finding and fixing existing defects.<br>查找并修复现有缺陷。 |
+| **Test Design (测试设计依据)** | Based on requirements and design documents.<br>基于需求和设计文档。 | Based on system behavior or observed defects.<br>基于系统行为或观察到的缺陷。 |
+| **Cost of Defect Fixing (缺陷修复成本)** | Lower, as issues are identified early.<br>较低，因为问题在早期就被发现。 | Higher, as issues are identified after development.<br>较高，因为问题是在开发完成后才发现的。 |
+| **Suitability (适用场景)** | Best for projects with stable requirements and thorough planning.<br>最适合需求稳定且规划充分的项目。 | Best for projects with evolving requirements or Agile development.<br>最适合需求不断变化或采用敏捷开发的项目。 |
+
+### Back-to-back Testing (对比测试)
+- Used to compare the outputs of two or more versions of a software system to ensure that they produce the same results when subjected to the same inputs.
+  用于比较两个或多个版本的软件系统的输出，以确保在给予相同输入时它们能产生相同的输出结果。
+- This approach is often employed when changes have been made to a system, such as updates, enhancements, or platform migrations.
+  这种方法通常在系统发生更改（例如升级、功能增强或迁移到不同平台）时使用。
+- It ensures that the new or modified system behaves identically to the original.
+  它能确保新系统或经修改后的系统在行为上与原系统保持一致。
+
+### Performance & Stress Testing (性能与压力测试)
+- **Load Testing (负载测试)**:
+  - Ensures the system is able to support a high number of users simultaneously without performance degradation.
+    确保系统能够在性能不下降的前提下，同时支持大量用户在线。
+  - *Example*: Supporting 2 million users concurrently.
+    *示例*：同时支持 200 万并发用户。
+
+- **Stress Test for Load (负载压力测试)**:
+  - The system will be tested beyond the load limit by increasing the load until the system crashes.
+    系统将在超出负载极限的情况下接受测试，通过不断增加负载直到系统崩溃。
+  - *Example*: Exceeding 2 million users to observe crash conditions.
+    *示例*：超出 200 万用户限制，观察系统的崩溃临界点。
+
+- **Volume Testing (容量测试)**:
+  - Ensures the system is able to process a high volume of data per stipulated time frame without performance degradation.
+    确保系统能够在性能不下降的前提下，在规定时间内处理海量数据。
+  - *Example*: Processing 4 million transactions per minute.
+    *示例*：每分钟处理 400 万笔交易。
+
+- **Stress Test for Volume (容量压力测试)**:
+  - The system will be tested beyond the volume limit by increasing transactions until the system crashes.
+    系统将在超出数据量极限的情况下接受测试，通过不断增加交易量直到系统崩溃。
+  - *Example*: Exceeding 4 million transactions per minute until failure occurs.
+    *示例*：超过每分钟 400 万笔交易的极限，直至发生系统故障。
+
+---
+
+## 3. Case Study & Analysis (案例分析与练习)
+
+### Scenario (场景描述)
+- The organization won a bid to build an e-learning system for a college with a 12-member team led by a Project Manager.
+  软件公司成功中标为一家当地知名学院开发电子学习系统，你作为项目经理带领 12 名成员的团队负责该项目。
+- **Key Challenges (主要挑战)**:
+  - Unconfirmed requirements during requirement analysis.
+    在需求分析阶段，部分需求尚未确认和最终定稿。
+  - Overseas hardware delays with uncertain availability timelines.
+    开发某些部分所需的硬件需要从海外供应商订购，且早期无法保证供货时间。
+  - Urgent partial delivery request within 2 months for marketing purpose.
+    客户希望在两个月内交付已确定的系统部分，以便作为新学期招生的营销策略。
+
+---
+
+### Recommended Solution (推荐解决方案)
+
+#### Model Selection (模型选择)
+- The **Agile Approach** (such as Scrum) is the most appropriate process model for managing this project.
+  **敏捷开发方法**（如 Scrum）是管理该电子学习系统项目最合适的流程模型。
+
+#### Justification (选择依据)
+- Agile is well-suited for projects with evolving requirements and uncertainties.
+  敏捷开发非常适合需求不断变化且充满不确定性的项目。
+- Its iterative and incremental approach allows for flexibility in adapting to changes throughout the development process.
+  其迭代和增量的工作方式允许在整个开发过程中灵活应对各种变化。
+- It enables the team to deliver working software in short cycles, directly addressing the 2-month partial delivery deadline.
+  它能让团队在短周期内交付可运行的软件，直接满足了客户在两个月内交付部分功能的要求。
+- Continuous feedback and close customer collaboration facilitate requirement refinement as details become clear.
+  随着细节的日益清晰，持续的反馈和与客户的密切协作有助于逐步完善和优化需求。
+
+#### Key Assumptions (关键假设条件)
+- The client is willing to engage in frequent communication and provide timely feedback.
+  客户愿意参与频繁的沟通并及时提供反馈。
+- The project team can quickly adapt to Agile methodologies and infrastructure.
+  项目团队能够快速适应敏捷开发方法及相关的工具设施。
+- The system can be prioritized and segmented into independent, deliverable modules.
+  项目可以被合理划分优先级，并拆分为独立、可增量交付的模块。
+- Hardware dependencies can be managed via mock-ups or alternative solutions for affected areas until hardware arrives.
+  在硬件到达前，可通过替代方案或模拟（Mock-up）来管理有硬件依赖的开发区域。
+- The college accepts partial releases for initial deployment and testing.
+  学院愿意接受并测试阶段性交付的部分系统功能。

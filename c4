@@ -1,0 +1,293 @@
+# Chapter 4: Software Verification and Validation
+
+## 1. Objectives (目标)
+
+- **Verification and Validation (V&V)**
+  - Verification: Are you building the product right?
+    验证：你是否在正确地构建产品？
+  - Software must conform to its specification.
+    软件必须符合其规格说明。
+  - Validation: Are you building the right product?
+    确认：你是否在构建正确的产品？
+  - Software should do what the user really requires.
+    软件应该满足用户的实际需求。
+
+- **V&V Goals (V&V 的目标)**
+  - The program being developed must be checked to ensure that it meets its specification and delivers the functionality expected by the people paying for the software.
+    必须对正在开发的程序进行检查，以确保其符合规格说明并提供付费者所期望的功能。
+
+- **SDLC Stages & Documents (软件开发生命周期阶段与文档)**
+  - Planning (Input: Business Requirements) -> Output: BRD
+    规划阶段（输入：业务需求）-> 输出：业务需求文档 (BRD)。
+  - Analysis (Input: BRD) -> Output: SRS
+    分析阶段（输入：BRD）-> 输出：软件需求说明书 (SRS)。
+  - Design (Input: SRS) -> Output: HLD, DLD, Design Documents
+    设计阶段（输入：SRS）-> 输出：高层设计 (HLD)、详细设计 (DLD) 及设计文档。
+  - Coding (Input: Design Docs) -> Output: Source Code
+    编码阶段（输入：设计文档）-> 输出：源代码。
+  - Testing (Input: Source Code) -> Output: Test cases, Test results
+    测试阶段（输入：源代码）-> 输出：测试用例、测试结果。
+
+---
+
+## 2. Software Testing Fundamentals (软件测试基础)
+
+- **Introduction (引言)**
+  - The quality of a piece of software depends on its design, development, testing, and implementation.
+    软件的质量取决于其设计、开发、测试和实现。
+  - One aspect of software quality is its reliability.
+    软件质量的一个方面是其可靠性。
+  - A software is reliable if, when used in a reasonable manner, it does not produce failures that are dangerous or costly.
+    如果软件在以合理的方式使用时不会产生危险或昂贵的故障，则该软件是可靠的。
+  - Testing can only demonstrate the presence of errors, it cannot show that there are no errors in a program.
+    测试只能证明错误的存在，不能证明程序中没有错误。
+  - Testing should be scheduled as part of the project planning process.
+    测试应作为项目规划过程的一部分来进行计划。
+  - Adequate resources must be made available for testing.
+    必须为测试提供充足的资源。
+
+- **Main Goals of Testing (测试的主要目标)**
+  - Validation Testing: To demonstrate to the developer and the customer that the software meets the requirements.
+    确认测试：向开发者和客户证明软件满足需求。
+  - Defect Testing: To discover faults or defects in the software where the behaviour of the software is incorrect, undesirable, or does not conform to its specification.
+    缺陷测试：发现软件中行为不正确、不理想或不符合规格说明的故障或缺陷。
+
+---
+
+## 3. Levels of Testing (测试级别)
+
+### 3.1 Unit Testing (单元测试)
+- Unit Testing is a software testing technique in which individual units or components of a software application are tested in isolation.
+  单元测试是一种软件测试技术，其中软件应用程序的单个单元或组件是被独立测试的。
+- These units are the smallest pieces of code, typically functions or methods, ensuring they perform as expected.
+  这些单元是最小的代码块（通常是函数或方法），以确保它们按预期运行。
+- Carried out by developers.
+  由开发人员执行。
+- Goal: Confirm that subsystem is correctly coded and carries out the intended functionality.
+  目标：确认子系统已被正确编码并实现了预期的功能。
+
+### 3.2 Integration Testing (集成测试)
+- Integration testing is the process of testing the interface between two software units or modules.
+  集成测试是测试两个软件单元或模块之间接口的过程。
+- It focuses on determining the correctness of the interface.
+  它专注于确定接口的正确性。
+- The purpose of integration testing is to expose faults in the interaction between integrated units.
+  集成测试的目的是暴露已集成单元之间交互中的缺陷。
+- Once all the modules have been unit-tested, integration testing is performed.
+  一旦所有模块都完成了单元测试，就会进行集成测试。
+- Carried out by developers.
+  由开发人员执行。
+- Goal: Test the interface among the subsystems.
+  目标：测试子系统之间的接口。
+
+#### Integration Testing Approaches (集成测试方法):
+1. **Top-Down Testing (自顶向下测试)**
+   - Begins with the upper-level modules and works downwards.
+     从顶层模块开始，向下逐步进行。
+   - Used in order to simulate the behaviour of the lower-level modules that are not yet integrated.
+     用于模拟尚未集成的底层模块的行为。
+   - High-level modules are tested first, then low-level modules, and finally integrating low-level modules to a high level.
+     首先测试高层模块，然后测试底层模块，最后将底层模块集成到高层，以确保系统按预期工作。
+
+2. **Bottom-Up Testing (自底向上测试)**
+   - Starts with the fundamental components and works upwards.
+     从基础组件开始，向上逐步进行。
+   - Each module at lower levels is tested with higher modules until all modules are tested.
+     底层每个模块都与高层模块一起测试，直到所有模块都经过测试。
+   - Primary purpose: test the interfaces among various modules making up the subsystem.
+     主要目的：测试组成子系统的各个模块之间的接口。
+   - Uses test drivers to drive and pass appropriate data to the lower-level modules.
+     使用测试驱动程序（test drivers）来驱动并传递适当的数据给底层模块。
+
+3. **Regression Testing (回归测试)**
+   - Involves retesting the integrated components/modules to ensure that new changes have not introduced any issues or broken existing functionality.
+     涉及重新测试已集成的组件/模块，以确保新的更改没有引入任何问题或损坏现有功能。
+   - Rerun the tests for previous increments when a new increment is integrated.
+     当集成新的增量时，重新运行针对先前增量的测试。
+   - If problems occur, check whether these were in the previous increment that the new increment exposed, or due to the added increment.
+     如果出现问题，应检查这些问题是在先前的增量中（由新增量所暴露的），还是由于新增加的功能增量导致的。
+   - Regression testing is expensive.
+     回归测试成本较高。
+
+### 3.3 System Testing (系统测试)
+- System testing evaluates the overall functionality and performance of a complete and fully integrated software solution.
+  系统测试旨在评估一个完整且完全集成的软件解决方案的整体功能和性能。
+- It tests if the system meets the specified requirements and if it is suitable for delivery to the end-users.
+  它测试系统是否满足指定的要件，以及是否适合交付给终端用户。
+- Performed by a testing team that is independent of the development team to help test the quality impartially.
+  由独立于开发团队的测试团队执行，以确保公正地测试系统质量。
+
+### 3.4 Acceptance Testing (验收测试)
+- Final stage in the testing process before the system is accepted for operational use.
+  在系统被接受投入实际运行使用之前测试过程的最终阶段。
+- User Acceptance Testing (UAT) determines that the software does what it was designed to do in real-world situations.
+  用户验收测试 (UAT) 用于确定软件在真实世界环境中是否实现了其设计的预期功能。
+- Conducted by end users.
+  由终端用户执行。
+- Types of UAT Testing: Beta testing and Black Box testing.
+  UAT 测试的类型：Beta 测试和黑盒测试。
+
+#### Beta Testing (Beta 测试)
+- Beta testing involves delivering a system to a number of potential customers who agree to use that system.
+  Beta 测试涉及将系统交付给同意使用该系统的若干潜在客户。
+- Exposes the product to real use and detects errors that may not be anticipated by the developers.
+  使产品露于实际使用中，并检测开发人员可能未预料到的错误。
+
+---
+
+## 4. Testing Techniques & Strategies (测试技术与策略)
+
+### 4.1 Black Box Testing (黑盒测试)
+- Relies on the specification of the system or component to derive test cases.
+  依赖系统或组件的规格说明来导出测试用例。
+- The system behaviour can only be determined by studying its inputs and related outputs.
+  系统行为只能通过研究其输入和相关的输出来确定。
+
+### 4.2 Test Data (测试数据)
+- **Live Data (实时数据/真实数据)**
+  - Extracted from actual organization files and database.
+    从组织的实际文件和数据库中提取。
+  - Users key in data from normal activities.
+    用户输入来自日常活动的数据。
+  - Difficult to obtain in sufficient amounts to conduct extensive testing.
+    难以获得足够数量的真实数据来进行全面测试。
+- **Artificial Data (人工数据)**
+  - Created solely for test purposes to test all combinations of formats and values.
+    专门为测试目的而创建，用于测试格式和数值的所有组合。
+  - Quickly prepared by a data-generating utility program.
+    可以通过数据生成实用程序快速准备。
+  - Most effective when generated by persons other than those who wrote the programs.
+    由非编写程序的人员生成时最为有效。
+
+### 4.3 Performance / Stress Testing (性能/压力测试)
+- Once a system is integrated, tests ensure it can process the intended load.
+  系统集成后，测试可确保其能够处理预期的负载。
+- Stressing the system by going beyond its specified limits tests how well it copes with overload situations.
+  通过超出其指定的极限来对系统施加压力，以测试其应对过载情况的能力。
+- *Example*: In a banking system, testing what happens if all tellers sign on at their terminals at the same time.
+  *示例*：在银行系统中，测试如果所有出纳员在同一时间登录终端会发生什么。
+
+### 4.4 Back-to-back Testing (对比测试)
+- Used when versions (e.g., version 1 and version 2) of a system are available.
+  当系统的多个版本（例如版本 1 和版本 2）可用时使用。
+- Systems are tested together and their outputs are compared.
+  系统一起接受测试，并对其输出结果进行比较。
+- Differences between test results highlight potential problems.
+  测试结果之间的差异突显了潜在的问题。
+
+### 4.5 Testing Strategy (测试策略)
+- A general approach to the testing process, rather than a method of devising specific tests.
+  测试过程的通用方法，而不是设计具体测试的方法。
+- **Proactive Approach (主动/预先防范方法)**:
+  - Takes anticipatory actions to prevent issues from occurring.
+    采取预防性行动来防止问题的发生。
+  - Focuses on planning, code reviews, static code analysis, and detailed test plans before coding begins.
+    在编码开始之前，侧重于规划、代码审查、静态代码分析以及制定详细的测试计划。
+- **Reactive Approach (被动/响应式方法)**:
+  - Responds to issues after they have occurred.
+    在问题发生后进行响应。
+  - Focuses on bug tracking, prioritizing issues, and root cause analysis (post-mortem).
+    侧重于缺陷跟踪、确定问题的优先级以及根本原因分析（事后总结）。
+
+---
+
+## 5. Test Case Design and Planning (测试用例设计与规划)
+
+### 5.1 Test Plan Contents (测试计划内容)
+1. **The testing process**: Unit, Module, Sub-system, System, and Acceptance Testing.
+   测试过程：单元测试、模块测试、子系统测试、系统测试和验收测试。
+2. **Requirement traceability**: Mapping test items to SRS specifications.
+   需求可追溯性：将测试项目映射到 SRS 规格说明。
+3. **Tested items**: Program Modules, User Procedures, Operator Procedures.
+   被测项目：程序模块、用户规程、操作规程。
+4. **Testing schedule**: Gantt Chart for testing timeline.
+   测试进度表：用于测试时间安排的甘特图。
+5. **Testing recording procedures**: Documenting Test Case ID, Test Data, Expected/Actual Results, Comments.
+   测试记录规程：记录测试用例 ID、测试数据、预期/实际结果及备注。
+6. **Hardware & software requirements**: Target environments (e.g., OS, device specs).
+   硬件和软件要求：目标环境（如操作系统、设备规格）。
+7. **Constraints**: Availability of test items, resources, and time.
+   约束条件：测试项目、资源和时间的可用性。
+
+### 5.2 Approaches for Test Case Design (测试用例设计方法)
+- **Requirements-based testing**: Designed to test that system requirements are met.
+  基于需求的测试：旨在测试系统需求是否已得到满足。
+- **Partition testing**: Identifies input/output partitions so the system executes inputs from all partitions.
+  等价类划分测试：识别输入/输出划分，使系统执行来自所有划分的输入并生成所有划分的输出。
+- **Structural testing**: Uses knowledge of program structure to exercise all parts of the program (path coverage).
+  结构化测试：利用程序结构的知识来测试程序的所有部分（路径覆盖）。
+
+---
+
+## 6. Testing Principles / Guidelines (测试原则与指南)
+
+- **All tests should be traceable to customer requirements.**
+  所有测试都应可追溯到客户需求。
+- **Tests should be planned long before testing begins.**
+  测试应在测试正式开始前很久就做好计划。
+- **The Pareto principle applies to software testing.**
+  帕累托法则（80/20法则）适用于软件测试。
+  - 80% of all errors found will likely be traceable to 20% of all program modules.
+    发现的所有错误中有 80% 可能会追溯到所有程序模块中的 20%。
+- **Testing should begin "in small" and progress toward "in the large".**
+  测试应“由小到大”地逐步推进。
+- **Exhaustive testing is not possible.**
+  穷尽测试是不可能的。
+- **To be most effective, testing should be conducted by an independent third party.**
+  为了达到最佳效果，测试应由独立的第三方执行。
+
+---
+
+## 7. Software Inspection (软件检查 - 静态验证)
+
+### 7.1 What is Inspection? (什么是检查？)
+- Inspections are a formal type of review that involves checking documents thoroughly before a meeting, led by a moderator.
+  检查是一种正式的评审类型，包括在会议前彻底检查文档，由主持人主导。
+- Purpose: Review code/design with everyone and report any bugs found.
+  目的：与所有人一起评审代码/设计，并报告发现的任何错误。
+
+### 7.2 Benefits of Inspection (检查的好处)
+- Finds defects or faults early.
+  早期发现缺陷或故障。
+- Improves quality (coding style, best practices).
+  提高质量（代码风格、最佳实践）。
+- Cost improvement: Applied during early stages of SDLC.
+  成本改善：可应用于 SDLC 的早期阶段。
+- Educates developers and improves team communication.
+  教育培训开发人员并改善团队沟通。
+
+### 7.3 Inspection Roles (检查角色, 3-6名参与者)
+| Role (角色) | Responsibility (职责) |
+| :--- | :--- |
+| **Author (作者)** | Programmer/designer responsible for producing the item being inspected.<br>负责编写被检查程序或文档的程序员或设计师。 |
+| **Moderator (主持人)** | Leader of the inspection, plans and coordinates the process.<br>检查的领导者，负责计划和协调检查过程。 |
+| **Inspector (检查员)** | Examines work products to identify possible defects.<br>检查工作产品以识别可能的缺陷。 |
+| **Reader (朗读员)** | Reads the code/document line by line during the meeting.<br>在会议期间逐行朗读代码或文档。 |
+| **Recorder / Scribe (记录员)** | Documents defects found during the inspection process.<br>记录检查过程中发现的缺陷。 |
+
+### 7.4 The Process of Software Inspection (软件检查流程)
+1. **Planning (计划)**: Moderator plans the inspection.
+   计划阶段：主持人制定检查计划。
+2. **Overview Meeting (概述会议)**: Author describes product features to the team.
+   概述会议：作者向检查团队介绍产品的重要特征。
+3. **Preparation (准备阶段)**: Participants examine work artifacts individually before the meeting.
+   准备阶段：参与者在正式检查会议之前单独检查工作产物。
+4. **Inspection Meeting (检查会议)**: Team convenes, Reader presents line by line, Inspectors point out defects.
+   检查会议：团队召开会议，朗读员逐行展示，检查员指出缺陷。
+5. **Rework (重工阶段)**: Author resolves issues raised during inspection.
+   重工阶段：作者负责解决检查过程中提出的所有问题。
+6. **Follow-up (追踪阶段)**: Moderator verifies that necessary reworks have been performed correctly.
+   追踪阶段：主持人跟进作者，验证必要的重工和修改是否已妥善完成。
+
+---
+
+## 8. Key Points Summary (要点总结)
+
+- Verification shows conformance with specification; validation shows that the program meets customer's needs.
+  验证表明符合规格说明；确认表明程序满足客户的需求。
+- Test plans should be drawn up to guide the testing process.
+  应制定测试计划来指导测试过程。
+- Static verification techniques involve examination and analysis of the program for error detection.
+  静态验证技术包含对程序的检查和分析，用于错误检测。
+- Program inspections are very effective in discovering errors early.
+  程序检查在早期发现错误方面非常有效。

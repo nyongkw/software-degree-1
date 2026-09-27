@@ -1,0 +1,193 @@
+# Chapter 8: User Interface Design Study Notes
+
+## 1. Introduction to User Interface (UI) / 用户界面简介
+
+- 用户界面的设计应该符合预期用户的技能、经验和期望。
+- User interfaces should be designed to match the skills, experience and expectations of its anticipated users.
+- 系统用户通常是通过界面而不是具体功能来评价一个系统的。
+- System users often judge a system by its interface rather than its functionality.
+- 设计不良的界面会导致用户犯错。
+- A poorly designed interface can cause a user to make errors.
+- 糟糕的用户界面设计是很多软件系统从未被使用的原因。
+- Poor user interface design is the reason why so many software systems are never used.
+
+---
+
+## 2. Human Factors in Interface Design / 界面设计中的人为因素
+
+- **有限的短时记忆**：人们瞬间只能记住大约7项信息。
+- **Limited short-term memory**: People can instantaneously remember about 7 items of information.
+- 如果展示超过7项信息，用户更容易犯错。
+- If you present more than this, they are more liable to make mistakes.
+- **人们会犯错**：当人们犯错或系统出错时，不恰当的警报和消息会增加压力，从而增加犯更多错误的可能性。
+- **People make mistakes**: When people make mistakes and systems go wrong, inappropriate alarms and messages can increase stress and hence the likelihood of more mistakes.
+- **人与人是不同的**：人们拥有广泛的生理能力差异，设计师不应仅根据自己的能力来设计。
+- **People are different**: People have a wide range of physical capabilities. Designers should not just design for their own capabilities.
+- **人们有不同的交互偏好**：有些人喜欢图片，有些人喜欢文本。
+- **People have different interaction preferences**: Some like pictures, some like text.
+
+---
+
+## 3. Benefits of Good Design (User View) / 良好设计的优势（用户视角）
+
+- **更好的用户体验 (UX)**：设计良好的应用直观且易于使用，提供无缝体验。
+- **Better User Experience (UX)**: A well-designed application is intuitive and easy to use, providing a seamless experience.
+- 清晰、响应迅速且有条理的界面能减少用户的挫败感并提高满意度。
+- Clear, responsive, and organised interface reduces user frustration and increases satisfaction.
+- **更快的性能**：良好的设计确保软件针对速度进行了优化，从而带来更快加载时间和更顺畅的整体体验。
+- **Faster Performance**: Good design ensures that the software is optimised for speed, resulting in quicker load times and a smoother overall experience.
+- **可靠性与稳定性**：稳定的系统能减少崩溃、错误和意外行为。
+- **Reliability and Stability**: A stable and bug-free application minimises crashes, errors, and unexpected behaviour.
+- **可定制性**：良好的结构使调整界面和设置等个性化选项变得更加容易。
+- **Customizability**: Personalisation options are made easier through a well-structured design.
+
+---
+
+## 4. GUI Characteristics / 图形用户界面（GUI）的特征
+
+- **窗口 (Windows)**：允许在用户的屏幕上同时显示不同的信息。
+- **Windows**: Multiple windows allow different information to be displayed simultaneously on the user's screen.
+- **图标 (Icons)**：代表不同类型的信息，如文件或进程。
+- **Icons**: Icons represent different types of information, such as files or processes.
+- **菜单 (Menus)**：从菜单中选择命令，而不是在命令语言中输入。
+- **Menus**: Commands are selected from a menu rather than typed in a command language.
+- **定点操作 (Pointing)**：使用鼠标等定点设备从菜单中选择选项或指示感兴趣的项。
+- **Pointing**: A pointing device such as a mouse is used for selecting choices from a menu.
+- **图形 (Graphics)**：图形元素可以与文本混合显示在同一个屏幕上。
+- **Graphics**: Graphical elements can be mixed with text on the same display.
+
+---
+
+## 5. Interaction Styles / 交互样式
+
+### 5.1 Direct Manipulation / 直接操纵
+- **优点**：快速且直观的交互；容易学习；用户感觉掌控电脑；可获得即时反馈。
+- **Advantages**: Fast and intuitive interaction; Easy to learn; Users feel in control; Immediate feedback.
+- **缺点**：可能难以实现；仅适用于存在任务和对象视觉隐喻的场景；对计算机系统要求高。
+- **Disadvantages**: May be hard to implement; Only suitable where there is a visual metaphor; Heavy demands on system.
+- **应用示例**：视频游戏、CAD 系统。
+- **Examples**: Video games, CAD systems.
+
+### 5.2 Menu Selection / 菜单选择
+- **优点**：避免用户出错；只需极少的打字输入；无需记忆命令名称。
+- **Advantages**: Avoids user error; Little typing required; Users need not remember command names.
+- **缺点**：对经验丰富的用户来说较慢；如果选项过多可能会变得复杂。
+- **Disadvantages**: Slow for experienced users; Can become complex if many options.
+- **应用示例**：大多数通用系统。
+- **Examples**: Most general-purpose systems.
+
+### 5.3 Form Fill-in / 表单填充
+- **优点**：简单的文本数据录入；易于学习。
+- **Advantages**: Simple data entry; Easy to learn.
+- **缺点**：占用大量屏幕空间。
+- **Disadvantages**: Takes up a lot of screen space.
+- **应用示例**：库存控制、个人贷款处理。
+- **Examples**: Stock control, Personal loan processing.
+
+### 5.4 Command Language / 命令语言
+- **优点**：功能强大且灵活；允许使用命令组合创建任意复杂度的命令；适合熟练用户。
+- **Advantages**: Powerful and flexible; Allows command combinations; Preferred by experienced users.
+- **缺点**：难以学习；错误管理较差；需要熟练的打字能力。
+- **Disadvantages**: Hard to learn; Poor error management; Typing ability is required.
+- **应用示例**：操作系统（如 UNIX）、图书检索系统。
+- **Examples**: Operating systems, Library information retrieval systems.
+
+### 5.5 Natural Language / 自然语言
+- **概念**：用户使用自然语言输入命令，词汇量通常受限于特定的应用领域。
+- **Concept**: The user types a command in a natural language, usually confined to specific application domains.
+- **优缺点**：对偶发用户有效，但经验丰富的用户会发现需要打太多字。
+- **Pros & Cons**: Effective for casual users, but experienced users find that they require too much typing.
+
+---
+
+## 6. Information Presentation / 信息展现
+
+- 信息展现关乎如何向系统用户展示系统信息。
+- Information presentation is concerned with presenting system information to system users.
+- 信息可以直接展示（如文本），也可以经过某种转换后展示（如图形形式）。
+- Information may be presented directly or transformed for presentation.
+
+### Static vs. Dynamic Information / 静态与动态信息
+- **静态信息 (Static Information)**：在会话开始时初始化，会话期间不会改变（如数值或文本）。
+- **Static Information**: Initialised at the beginning of a session and does not change during the session.
+- **动态信息 (Dynamic Information)**：在会话期间会发生变化，且变化必须传达给用户。
+- **Dynamic Information**: Changes during a session and the changes must be communicated to the system user.
+
+### Analogue vs. Digital Presentation / 模拟与数字展现
+- **数字展现 (Digital Presentation)**：紧凑、占用屏幕空间小，能传达精确数值。
+- **Digital Presentation**: Compact, takes up little screen space, precise values can be communicated.
+- **模拟展现 (Analogue Presentation)**：更容易一目了然地获取大致印象，能展示相对值和异常数据值。
+- **Analogue Presentation**: Easier to get an 'at a glance' impression, possible to show relative values and exceptional data.
+
+---
+
+## 7. Guidelines for Using Color / 颜色使用指南
+
+- **别使用太多颜色**：界面中常见的错误是过度使用颜色或颜色太亮。
+- **Don't use too many colours**: Common mistakes in UI design include over-use of colour or bright colours.
+- **使用颜色编码支持用户任务**：例如使用红色表示危险。
+- **Use colour coding to support user tasks**: For example, red indicates danger.
+- **保持颜色编码的一致性**：不一致的使用会导致混乱。
+- **Use colour coding consistently**: Inconsistent use of colour causes confusion.
+- **先设计单色，再添加颜色**：确保色盲用户或低分辨率显示器也能正常使用。
+- **Design for monochrome then add colour**: Ensure usability for color-blind users and low-resolution displays.
+- **避免冲突的颜色搭配**：某些颜色组合无法舒适地长时间观看。
+- **Avoid colour pairings which clash**: Some colours cannot be viewed comfortably for long.
+- **利用颜色变化展示状态改变**：颜色可以用来突出异常事件。
+- **Use colour change to show status change**: Colour can be used to highlight exceptional events.
+
+---
+
+## 8. Design Factors in Message Wording / 消息措辞的设计因素
+
+- **上下文 (Context)**：用户指导系统应感知用户的操作，并根据当前上下文调整输出消息。
+- **Context**: The user guidance system should adjust the output message to the current context.
+- **经验 (Experience)**：新手难以理解简短生硬的表述，而熟练用户会被长消息激怒；系统应提供可控的精简度。
+- **Experience**: Beginners find short messages hard to understand, while experienced users get annoyed by long messages.
+- **技能水平 (Skill Level)**：消息应根据用户的技能水平和熟悉术语进行定制。
+- **Skill Level**: Messages should be tailored to the user's skills and terminology.
+- **风格 (Style)**：消息应是积极的而非消极的，使用主动语态，切勿具侮辱性。
+- **Style**: Messages should be positive rather than negative, active rather than passive, and never insulting.
+- **文化 (Culture)**：设计师应熟悉不同国家和地区的文化差异。
+- **Culture**: Message designers should be familiar with cultural differences across regions.
+
+### Error Messages / 错误消息
+- 错误消息的设计至关重要；糟糕的错误消息会导致用户放弃系统。
+- Error message design is critically important; poor error messages can mean users reject the system.
+- 消息应当礼貌、简明、一致且具有建设性。
+- Messages should be polite, concise, consistent and constructive.
+- **用户导向 vs. 系统导向**：错误消息应以用户为导向（如指示具体解决步骤），而不是仅显示冷冰冰的系统错误代码（如 "Error #27"）。
+- **User-oriented vs. System-oriented**: Messages should be user-oriented rather than showing raw system codes.
+
+---
+
+## 9. 3 Golden Rules for UI Design / UI设计的三大金科玉律
+
+1. **置用户于控制地位 (Place the user in control)**
+   - 人们不喜欢被机器控制，他们希望清楚了解系统的操作状态（例如进度条）。
+   - People do not like to be controlled by the machine and they like to know the status of the system.
+
+2. **减少用户的记忆负担 (Reduce the user's memory load)**
+   - 人类的短时记忆有限，处理过多信息时容易犯错。
+   - People have limited short-term memory and make mistakes when handling too much info.
+
+3. **保持界面一致 (Make the interface consistent)**
+   - 界面应易于学习，在一个命令或应用中学到的知识可以应用到系统的其他部分。
+   - Easy to learn, and knowledge learned in one part is applicable to other parts.
+
+---
+
+## 10. UI Design Principles / UI 设计原则
+
+- **用户熟悉度 (User Familiarity)**：应使用源自用户经验的术语和概念（例如图书系统中的借书、还书、续借）。
+- **User Familiarity**: Should use terms and concepts drawn from user experience.
+- **一致性 (Consistency)**：尽可能以相同的方式激活相同类型的操作。
+- **Consistency**: Wherever possible, operations should be activated in the same way.
+- **极少惊奇 (Minimal Surprise)**：系统的行为永远不应该让用户感到出乎意料（例如不要突然强制关机）。
+- **Minimal Surprise**: Users should never be surprised by the behaviour of a system.
+- **可恢复性 (Recoverability)**：应允许用户从错误中恢复（例如提供撤销 Undo 功能）。
+- **Recoverability**: Should allow users to recover from errors, e.g., Undo function.
+- **用户指导 (User Guidance)**：当发生错误时，提供帮助功能和有意义的反馈。
+- **User Guidance**: Provide help feature and meaningful feedback when errors occur.
+- **用户多样性 (User Diversity)**：应为不同类型的系统用户提供合适的交互设施（如针对新手与专业用户提供不同的安装指南）。
+- **User Diversity**: Should provide appropriate interaction facilities for different types of users.

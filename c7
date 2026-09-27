@@ -1,0 +1,167 @@
+# 软件架构设计笔记 / Software Architectural Design Notes
+
+---
+
+## 1. 软件架构设计简介 / Introduction to Architectural Design
+
+* 软件架构设计是设计过程的第一阶段，通常发生在详细系统规范之前。  
+  Architectural design is the first stage in the design process and usually comes before detailed system specification.[cite: 1]
+* 大型系统可以分解为提供相关服务集的不同子系统。  
+  Large systems can be decomposed into sub-systems that provide some related set of services.[cite: 1]
+* 架构设计是指识别这些子系统并建立子系统控制与通信框架的初始设计过程。  
+  The initial design process of identifying these sub-systems and establishing a framework for sub-system control and communication is called architectural design.[cite: 1]
+
+---
+
+## 2. 明确架构设计的优势 / Advantages of Explicit Architecture
+
+* **利益相关者沟通**：提供系统设计的清晰结构化视角，确保所有参与方对系统组件、功能和依赖关系达成共识。  
+  **Stakeholder communication**: Providing a clear, structured view of the system's design, ensuring all parties have a shared understanding of its components,
+    functionalities, and dependencies.[cite: 1]
+* **系统分析**：系统分析师与利益相关者合作收集并理解业务需求，确保系统覆盖所有必要功能。  
+  **System Analyst**: System analysts work with stakeholders to collect and understand business requirements, ensuring that the system addresses all necessary functions.[cite: 1]
+* **大规模复用**：指在不同项目、应用或组织中大范围复用软件组件、模块或系统的实践。  
+  **Large-scale reuse**: Large-scale reuse refers to the practice of reusing software components, modules, or systems on a wide scale across different projects, applications,
+  or organisations.[cite: 1]
+* **协商**：利益相关者之间针对不同利益或视角进行讨论并达成互惠一致解决方案的过程。  
+  **Negotiation**: The process through which two or more parties with differing interests or perspectives come together to reach a mutually agreeable solution.[cite: 1]
+* **复杂性管理**：识别、理解和控制系统中的各种复杂元素，以确保系统高效运行并实现目标。  
+  **Complexity Management**: Refers to the practice of identifying, understanding, and controlling the various complex elements within a system, project,
+or process to ensure it operates efficiently and achieves its objectives.[cite: 1]
+
+---
+
+## 3. 架构设计的三个主要活动 / Three Main Architectural Design Activities
+
+1. **系统组织 / System Organization**
+2. **模块化分解 / Modular Decomposition**
+3. **控制建模 / Control Modeling**[cite: 1]
+
+---
+
+## 4. 活动一：系统组织与结构 / Activity 1: System Organization / Structuring
+
+* 将系统结构化为若干主要的子系统，其中每个子系统都是独立的软件单元。  
+  The system is structured into a number of principal sub-systems where a sub-system is an independent software unit.[cite: 1]
+* 同时确定子系统之间的通信方式。  
+  Communications between sub-systems are also identified.[cite: 1]
+
+### 常见的三种系统组织样式 / 3 Widely Used System Organization Styles
+
+#### A. 仓库模型 / Repository Model
+* 所有系统组件都通过中央仓库间接通信，而不是直接相互通信。  
+  Repository Architecture is a design pattern in which all components of a system communicate indirectly through a central repository, rather than directly with each other.[cite: 1]
+* 仓库存储系统的持久化数据，而组件对这些数据执行计算或转换。  
+  The repository stores the system’s persistent data, while components perform computations or transformations on that data.[cite: 1]
+* **关键特征 / Key Characteristics**:
+  * 中央仓库作为单一数据源（Source of Truth）。  
+    Central Repository acts as a single place where all data is stored, maintained, and accessed ("source of truth").[cite: 1]
+  * 独立组件独立运行，读写仓库，彼此不直接交互。  
+    Independent Components operate independently, reading from or writing to the repository without direct interaction.[cite: 1]
+  * 共享数据以一致和受控的方式提供给所有组件。  
+    Shared Data allows all components to access the same data in a consistent and controlled manner.[cite: 1]
+* **优点 / Advantages**:
+  * 数据一致性强，支持组件复用，维护方便，简化通信。  
+    Data Consistency, Reusability, Ease of Maintenance, and Simplified Communication.[cite: 1]
+* **缺点 / Disadvantages**:
+  * 单点故障风险、性能瓶颈、组件对仓库高度依赖。  
+    Single Point of Failure, Performance Bottleneck, and High Dependency on the repository.[cite: 1]
+* **示例 / Examples**:
+  * 版本控制系统（Git、SVN）、集成开发环境（IDE）、数据库中心型应用（ERP）及内容管理系统（CMS）。  
+    Version Control Systems (Git, SVN), IDEs (Eclipse, Visual Studio), Database-Centric Applications (ERP), and CMS (WordPress).[cite: 1]
+
+#### B. 客户机-服务器模型 / Client-Server Model
+* 系统功能被划分为客户端和服务端；客户端请求服务或资源，服务端提供服务。  
+  System functionality is divided between clients and servers; clients request services or resources, and servers provide them.[cite: 1]
+* 包括一组集中式服务器（提供数据管理等服务）和一组调用这些服务的客户端，通过网络进行连接。  
+  Consists of a set of centralised servers which provide specific services and a set of clients which call on these services over a network.[cite: 1]
+* **优点 / Advantages**:
+  * 数据分布直观，有效利用网络系统，硬件成本可能更低，易于扩展或升级服务器。  
+    Distribution of data is straightforward, effective use of networked systems, cheaper hardware, easy to add/upgrade servers.[cite: 1]
+* **缺点 / Disadvantages**:
+  * 无统一共享数据模型导致数据交换可能低效，每个服务器存在冗余管理，缺乏集中式的服务注册表。  
+    No shared data model leads to inefficient data interchange, redundant management in each server, no central register of names and services.[cite: 1]
+
+#### C. 分层模型 / Layered Model
+* 也称为抽象机模型（Abstract Machine Model），用于建模子系统之间的接口。  
+  Also called abstract machine model, used to model the interfacing of sub-systems.[cite: 1]
+* 将系统组织为一系列层，每一层提供一组特定的服务。  
+  Organises the system into a set of layers, each of which provides a set of services.[cite: 1]
+* 支持增量开发；当某层接口发生变化时，仅相邻层受影响（闭合分层模型）。  
+  Supports incremental development; when a layer interface changes, only the adjacent layer is affected.[cite: 1]
+* **典型分层示例 / Typical Layers**:
+  * 表现层（Presentation Layer） $\rightarrow$ 应用/服务层（Application Layer） $\rightarrow$ 业务逻辑层（Business Logic Layer） $\rightarrow$ 数据库层（Database Layer）。  
+    Presentation layer $\rightarrow$ Application layer $\rightarrow$ Business logic layer $\rightarrow$ Database layer.[cite: 1]
+* **优点 / Advantages**: 关注点分离（Separation of Concerns）、易于维护、组件可复用。  
+  Separation of Concerns, Ease of Maintenance, and Reusability.[cite: 1]
+* **缺点 / Disadvantages**: 多层管理复杂、数据跨层传输带来性能开销、跨层调试困难。  
+  Complexity in Layer Management, Performance Overhead due to data passing through multiple layers, and Difficult Debugging across layers.[cite: 1]
+
+---
+
+## 5. 活动二：模块化分解 / Activity 2: Modular Decomposition
+
+* 在选定整体系统组织后，需要决定将子系统进一步分解为模块的方法。  
+  Deciding on the approaches to be used to decompose sub-systems into modules after selecting an overall system organization.[cite: 1]
+* 模块中的组件通常比子系统小。  
+  Components in modules are usually smaller than sub-systems.[cite: 1]
+
+### 两种主要的分解策略 / 2 Main Decomposition Strategies
+
+1. **面向对象分解 / Object-Oriented Decomposition**
+   * 一种对象模型，将系统分解为一组相互通信的对象。  
+     An object model where a system is decomposed into a set of communicating objects.[cite: 1]
+2. **面向功能分解 / Function-Oriented Decomposition**
+   * 一种流水线/数据流模型，将系统分解为接收输入数据并将其转换为输出数据的功能模块。  
+     A pipeline/data-flow model where a system is decomposed into functional modules that accept input data and transform them into output data.[cite: 1]
+
+### 高内聚与低耦合 / High Cohesion and Low Coupling
+
+* **内聚性（Cohesion）**：模块内部各元素紧密结合、共同实现单一职责的程度。  
+  Cohesion is the degree to which elements inside a module belong together and focus on a single responsibility.[cite: 1]
+* **耦合度（Coupling）**：不同模块或组件之间相互依赖的程度。  
+  Coupling is the degree of interdependence between modules.[cite: 1]
+* **理想设计目标 / Ideal Goal**: 高内聚与低耦合（High Cohesion and Low Coupling）是软件开发中最理想的设计选择。  
+  High Cohesion and Low Coupling is the ideal design choice in software development.[cite: 1]
+
+---
+
+## 6. 活动三：控制建模 / Activity 3: Control Modeling
+
+* 结构/组织模型不包含控制信息，因此必须建立控制关系模型，以确保子系统的服务在正确的时间传递到正确的位置。  
+  Structural models do not include control information, so a general model of control relationships is required to
+ensure services are delivered to the right place at the right time.[cite: 1]
+* 控制建模关注的是子系统之间的控制流。  
+  Concerned with the control flow between sub-systems.[cite: 1]
+
+### 两种主要的控制样式 / 2 General Control Styles
+
+#### A. 集中式控制 / Centralized Control
+* 一个子系统承担总体的控制责任，负责启动和停止其他子系统。  
+  One sub-system has overall responsibility for control and starts and stops other sub-systems.[cite: 1]
+* **调用-返回模型（Call-Return Model）**：
+  * 自顶向下的子程序模型，适用于顺序执行系统（Sequential systems）。  
+    Top-down subroutine model applicable for sequential systems.[cite: 1]
+* **管理者模型（Manager Model）**：
+  * 由一个指定的系统组件作为管理者，控制其他并发进程的启动、停止和协调，适用于并发系统（Concurrent systems）。  
+    One system component is designated as the manager to control and coordinate processes, applicable to concurrent systems.[cite: 1]
+
+#### B. 基于事件的控制 / Event-Based Control
+* 每个子系统都可以对来自其他子系统或外部环境的事件作出响应。  
+  Each sub-system can respond to externally generated events from other sub-systems or the environment.[cite: 1]
+* **广播模型（Broadcast Model）**：
+  * 事件被广播给所有子系统，任何能够处理该事件的子系统都会作出响应，非常适合整合分布在网络不同计算机上的子系统。  
+    An event is broadcast to all sub-systems, and any sub-system that can handle it responds; effective for distributed systems.[cite: 1]
+* **中断驱动模型（Interrupt-Driven Model）**：
+  * 主要用于实时系统（Real-time systems），由中断处理程序捕获中断信号并将其传递给其他组件处理。  
+    Used in real-time systems where interrupts are detected by an interrupt handler and passed to components for processing.[cite: 1]
+
+---
+
+## 7. 章节总结速查表 / Summary Cheat Sheet
+
+| 类别 / Category | 模型与样式 / Models & Styles |
+| :--- | :--- |
+| **系统组织 / System Organization** | 1. 仓库模型 (Repository Model)<br>2. 客户机-服务器模型 (Client-Server Model)<br>3. 分层模型 (Layered Model) |
+| **模块化分解 / Modular Decomposition** | 1. 面向对象分解 (Object-Oriented Decomposition)<br>2. 面向功能分解 (Function-Oriented Decomposition) |
+| **控制建模 / Control Modeling** | **1. 集中式控制 (Centralized Control)**<br>&nbsp;&nbsp;&nbsp;&nbsp;a. 调用-返回模型 (Call-Return Model)<br>&nbsp;&nbsp;&nbsp;&nbsp;b. 管理者模型 (Manager Model)<br>**2. 基于事件的控制 (Event-Based Control)**<br>&nbsp;&nbsp;&nbsp;&nbsp;a. 广播模型 (Broadcast Model)<br>&nbsp;&nbsp;&nbsp;&nbsp;b. 中断驱动模型 (Interrupt-Driven Model) |

@@ -1,0 +1,176 @@
+# Chapter 6: Requirements Engineering Process (需求工程过程复习笔记)
+
+## 1. Introduction & Lesson Objectives (简介与课程目标)
+
+* 解释什么是需求工程。
+  Explain what is requirement engineering.
+* 描述需求工程过程中的 5 个主要活动。
+  Describe the 5 activities in requirements engineering process.
+* 讨论软件工程需求分析阶段存在的问题。
+  Discuss the problems in requirement analysis phase of software engineering.
+* 解释并评估面向视角的分析方法（Viewpoint-oriented analysis）。
+  Explain and evaluate Viewpoint-oriented analysis.
+
+---
+
+## 2. What is Requirement Engineering? (什么是需求工程？)
+
+* 需求工程是一个包含创建和维护系统需求文档所需的所有活动的路线与过程。
+  Requirement engineering is a process that involves all of the activities required to create and maintain a system requirements document.
+* 需求工程是识别、获取、分析、规范说明、验证和管理利益相关者对软件系统的需求和期望的过程。
+  Requirements engineering is the process of identifying, eliciting, analyzing, specifying, validating, and managing the needs and expectations of stakeholders for a software system.
+
+### 5 Main Activities in Requirements Engineering (需求工程的 5 大活动)
+1. **可行性研究 (Feasibility Studies)**
+   Feasibility Studies
+2. **需求获取与分析 (Requirement Elicitation and Analysis)**
+   Requirement Elicitation and Analysis
+3. **需求规范说明 (Requirement Specification)**
+   Requirement Specification
+4. **需求验证 (Requirement Validation)**
+   Requirement Validation
+5. **需求管理 (Requirement Management)**
+   Requirement Management
+
+---
+
+## 3. Feasibility Studies (可行性研究)
+
+* 可行性研究是在开发开始前进行的分析，旨在考虑技术、经济、运营和其他相关因素，以确定拟议的项目或系统是否切实可行、可实现且有价值。
+  A feasibility study is an analysis conducted to determine whether a proposed project or system is practical, achievable, and worthwhile, considering technical, economic, operational, and other relevant factors before development begins.
+
+### TELOS Framework (TELOS 框架)
+* **技术可行性 (Technical Feasibility)**：项目在技术上是否可行？评估当前软硬件技术及专业人员是否能实现用户需求。
+  Technical Feasibility: Is the project technically possible? Inspects whether software can be built using current software and hardware technologies and available experts.
+* **经济可行性 (Economic Feasibility)**：项目是否具备财务合理性？决定拟议系统是否具有成本效益，以及是否能在现有的预算限制内完成开发（粗略数量级评估 Rough Order of Magnitude 通常在此阶段进行）。
+  Economic Feasibility: Does it make financial sense? Decides if the proposed system will be cost-effective and can be developed given existing budgetary constraints (Rough Order of Magnitude is often used as initial estimate).
+* **法律可行性 (Legal Feasibility)**：法律限制如何影响项目？确保产品符合所有法规且不违法（例如：处理保护性健康信息的医疗软件必须符合 HIPAA 规则）。
+  Legal Feasibility: How can legal limitations affect the project? Makes sure that product complies with all regulations and doesn't break any law (e.g., medical software must meet HIPAA rules).
+* **运营可行性 (Operational Feasibility)**：维护和管理该项目有多难？探讨新项目将如何影响公司的日常流程、应实施哪些规程以及维护它需要做出哪些努力。
+  Operational Feasibility: How hard is it to maintain and manage the project? Explores how a new project will impact daily processes, what procedures should be implemented, and efforts needed to maintain it.
+* **进度可行性 (Schedule Feasibility)**：我们能否跟上现实的截止日期？分析拟议项目的时间线和截止日期，因为如果不能按时完成，项目的目的可能会失败。
+  Schedule Feasibility: Can we keep up with realistic deadlines? Analyzes timelines and deadlines for proposed project, as the purpose of the project may fail if it cannot be completed on time.
+
+---
+
+## 4. Requirements Analysis & Elicitation (需求分析与获取)
+
+* 这是导出系统需求的过程。
+  This is the process of deriving the system requirements.
+* 软件工程师与利益相关者合作，了解应用领域、应提供哪些服务、所需的性能以及硬件约束等。
+  Software engineers work with stakeholders to find out about the application domain, what services should be provided, the required performance, hardware constraints, etc.
+* **利益相关者 (Stakeholders)**：指任何直接或间接受到系统影响的人或群体。
+  Stakeholders refer to any person or group who will be affected by the system, directly or indirectly.
+
+### Why is Requirements Analysis Difficult? (为什么需求分析很困难？)
+* 用户或利益相关者不清楚他们想从计算机系统中得到什么。
+  Users/stakeholders are not clear on what they want from the computer system.
+* 用户或利益相关者通常用他们自己的专业术语来表达需求。
+  Users/stakeholders normally express requirements in their own terms.
+* 不同的利益相关者有不同的需求，他们可能会以完全不同的方式表达这些需求。
+  Different Users/stakeholders have different requirements and they may express them in quite different ways.
+* 分析是在组织背景下进行的，政治因素可能会影响系统的需求。
+  Analysis takes place in an organizational context and political factors may influence the requirements of the systems.
+* 进行分析的经济和商业环境是动态变化的，在分析过程中不可避免地会发生改变。
+  The economic and business environment in which the analysis takes place is dynamic, inevitably changing during the analysis process.
+
+### 4 Sub-activities of Requirements Analysis (需求分析的 4 个子活动)
+1. **需求发现 (Requirement Discovery)**：与利益相关者互动并从文档、类似系统规范中获取需求。
+   Requirement Discovery: Interacting with stakeholders and sources like documentation or similar system specs to discover requirements.
+2. **需求分类与组织 (Requirement Classification & Organization)**：将无序的需求整理为连贯的聚类，并消除重叠的需求。
+   Requirement Classification & Organization: Takes the unstructured collection of requirements and organizes them into coherent clusters, removing overlap.
+3. **需求优先级排序与谈判 (Requirement Prioritization & Negotiation)**：当涉及多个利益相关者时冲突不可避免，此活动致力于确定需求优先级并协商解决冲突。
+   Requirement Prioritization & Negotiation: Resolves inevitable conflicts between stakeholders through negotiation and prioritizes requirements.
+4. **需求文档化 (Requirement Documentation)**：记录需求并检查其完整性、一致性以及是否符合用户的真正需求。
+   Requirement Documentation: Documenting identified requirements and checking if they are complete, consistent, and aligned with stakeholders' needs.
+
+---
+
+## 5. Requirement Discovery Techniques & Viewpoints (需求发现技术与视角)
+
+### Viewpoint-Oriented Analysis (面向视角的分析)
+* 面向视角的分析是一种有助于确保在发现需求时获得广泛利益相关者覆盖的方法。
+  Viewpoint-oriented analysis is an approach that helps to ensure broad stakeholder coverage when discovering requirements.
+* 视角可以用来对利益相关者和其他需求来源进行分类。
+  Viewpoints can be used to classify stakeholders and other sources of requirements.
+
+#### 3 Generic Types of Viewpoints (3 种通用视角类型)
+1. **交互者视角 (Interactor Viewpoints)**
+   * 直接与系统交互的人或其他系统（提供详细的系统需求，如系统功能和接口）。
+     People or other systems that interact directly with the system (provide detailed system requirements like system features & interfaces).
+2. **间接视角 (Indirect Viewpoints)**
+   * 本身不使用系统但以某种方式影响需求的利益相关者（提供高层级的组织需求和限制条件）。
+     Stakeholders who do not use the system themselves but who influence the requirements in some way (provide high-level organizational requirements & constraints).
+3. **领域视角 (Domain Viewpoints)**
+   * 影响系统需求的领域特性和约束条件（提供领域约束）。
+     Domain characteristics and constraints that influence the system requirements (provide domain constraints).
+
+#### Why Structure Viewpoints into a Hierarchy? (为什么要将视角组织成层级结构？)
+* 对于大型系统，存在大量的视角，实际上不可能从所有视角中都获取需求；层级结构有助于识别同一分支中可能共享公共需求的视角。
+  For large systems, there are a huge number of viewpoints, making it practically impossible to elicit requirements from all of them; the hierarchy helps identify viewpoints in the same branch that likely share common requirements.
+* 有助于确保在分析和获取阶段覆盖了所有的视角。
+  Helps to ensure all viewpoints are covered in the analysis and elicitation stage.
+* 有助于判断某个视角是否为有效视角。
+  Helps to decide whether a viewpoint is a valid viewpoint or not.
+
+#### Advantages & Disadvantages of Viewpoint Analysis (视角分析的优缺点)
+* **优点 (Advantages)**：
+  * **结构化方法 (Structured Approach)**：提供了一种结构化方法来管理来自不同来源的需求复杂性。
+    Structured Approach: Provides a structured way to manage the complexity of requirements from diverse sources.
+  * **冲突识别 (Conflict Identification)**：显式地帮助发现并解决不同利益相关者需求之间的冲突。
+    Conflict Identification: Explicitly helps in finding and resolving conflicts between different stakeholder needs.
+  * **完整性 (Completeness)**：通过从多个角度系统地收集需求，提高了捕获所有关键信息的可能性。
+    Completeness: Increases the likelihood of capturing all critical information by systematically gathering requirements from various angles.
+  * **可追溯性 (Traceability)**：提供了将需求追溯回其特定来源的机制。
+    Traceability: Offers a mechanism to trace requirements back to their specific sources.
+* **缺点 (Disadvantages)**：
+  * **耗时 (Time-consuming)**：涉及对系统功能、成本和性能的详细评估。
+    Time-consuming: Involves a detailed evaluation of the system's functions, cost, and performance.
+  * **繁琐 (Tedious)**：需要大量的数据收集、文档记录和重复性劳动。
+    Tedious: Requires extensive data gathering and documentation, which can be repetitive and labor-intensive.
+  * **成本较高 (May be costly)**：可能需要专门的工具或专家咨询，从而增加项目总成本。
+    May be costly: May require specialized tools or expert consultants, increasing overall project cost.
+
+### Techniques for Requirement Discovery (需求发现的具体技术)
+* **访谈 (Interviewing)**：通过向具有相关知识或经验的人员提问来提取信息的有效数据收集技术。
+  Interviewing: A valuable fact-gathering technique involving asking questions to extract info from individuals with relevant knowledge.
+* **原型设计 (Prototyping)**：创建产品或系统的初步版本，以进行测试并收集反馈。
+  Prototyping: Creating a preliminary version of a product or system to test and gather feedback.
+* **情景/场景 (Scenario)**：通过真实示例帮助利益相关者理解系统（包括起始状态、正常事件流、异常处理和结束状态，例如用例场景）。
+  Scenario: Real-life examples making it easier for stakeholders to relate (includes start expectation, normal event flow, error handling, and end state).
+* **民族志/观察法 (Ethnography / Observation)**：一种观察技术，用于理解社会和组织需求，有助于发现反映实际过程而非正式过程的隐式需求。
+  Ethnography (Observation): An observational technique to understand social and organizational requirements, helping discover implicit system requirements.
+
+---
+
+## 6. Requirements Validation (需求验证)
+
+* 需求验证是检查定义的需求是否适合开发，并确认定义了客户真正想要的系统的过程。
+  Requirements validation is the process of checking that the defined requirements are for development, and defining the system that the customer really wants.
+* 它的核心问题是：“我们是否在构建正确的系统？”
+  Its core question is: "Are we building the right system?"
+
+### 5 Key Aspects to Check in Requirements Validation (需求验证需要检查的 5 个关键方面)
+1. **有效性 (Validity)**：用户所需的功能是否正确且已确认确实需要。
+   Validity: Functions user wanted are correct and confirmed needed.
+2. **一致性 (Consistency)**：没有相互冲突的需求规范。
+   Consistency: No conflicting requirements specifications.
+3. **完整性 (Completeness)**：包含用户所需的全部功能。
+   Completeness: Includes ALL functions needed by the user.
+4. **现实性检查 (Realism Check)**：在现有的技术、预算和时间线约束下是否能够被实现。
+   Realism check: Could be implemented with existing technology, budget, and schedule.
+5. **可验证性/可测量性 (Verifiability / Measurable)**：需求是否可以被测量或演示，以减少潜在的交付争议。
+   Verifiability: Requirements are measurable and can be demonstrated to ensure the delivered system meets each requirement.
+
+---
+
+## 7. Requirements Management (需求管理)
+
+* 需求管理是验证并满足客户以及内外利益相关者需求的过程。
+  Requirements management is the process of validating and meeting the needs (or requirements) of customers and external and internal stakeholders.
+
+### 2 Main Aspects of Requirements Management (需求管理的 2 个主要方面)
+1. **管理规划 (Management Planning)**：设计并制定需求管理的政策和规程。
+   Management Planning: Where policies and procedures for requirements management are designed and specified.
+2. **变更管理 (Change Management)**：分析拟议的需求变更并评估其对项目的影响。
+   Change Management: Where proposed requirements changes are analyzed and their impacts are assessed.

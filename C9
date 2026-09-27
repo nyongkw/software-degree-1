@@ -1,0 +1,215 @@
+# Chapter 9: Real-Time Operating System (RTOS) Study Notes
+
+## 1. Introduction to RTOS / 实时操作系统简介
+
+- 实时操作系统（RTOS）是当今许多嵌入式系统的核心，并提供了一个用于构建应用程序的软件平台。
+- A real-time operating system (RTOS) is key to many embedded systems today and provides a software platform upon which to build applications.
+- 然而，并非所有嵌入式系统都是使用 RTOS 设计的。
+- Not all embedded systems, however, are designed with an RTOS.
+- 一些硬件相对简单或软件应用代码量较少的嵌入式系统可能不需要 RTOS。
+- Some embedded systems with relatively simple hardware or a small amount of software application code might not require an RTOS.
+- 但是，许多具有中等至大型软件应用程序的嵌入式系统需要某种形式的调度，而这些系统就需要 RTOS。
+- Many embedded systems, however, with moderate-to-large software applications require some form of scheduling, and these systems require an RTOS.
+- 实时操作系统（RTOS）是一种能够及时调度执行、管理系统资源并为开发应用代码提供一致基础的程序。
+- A Real-Time Operating System (RTOS) is a program that schedules execution in a timely manner, manages system resources, and provides a consistent foundation for developing application code.
+- 实时操作系统保证在较短的指定时间内处理事件或数据。
+- A Real-Time Operating System is an operating system that guarantees to process events or data within a certain short amount of time.
+- 它能够对输入做出即时响应（实时）。
+- It responds to inputs immediately (Real-Time).
+- 在这里，任务会在指定的延迟时间内完成。
+- Here the task is completed within a specified time delay.
+- 在现实生活场景中，如控制交通信号灯、核反应堆或飞机，操作系统必须快速响应。
+- In real life situations like controlling traffic signal or a nuclear reactor or an aircraft, the operating system has to respond quickly.
+
+---
+
+## 2. Key Characteristics of an RTOS / RTOS 的关键特性
+
+- 应用程序的需求决定了其底层 RTOS 的需求。
+- An application's requirements define the requirements of its underlying RTOS.
+- 一些最常见的属性包括：可靠性、可预测性、性能、紧凑性和可扩展性。
+- Some of the more common attributes are Reliability, Predictability, Performance, Compactness, and Scalability.
+
+### 2.1 Reliability / 可靠性
+- 实时操作系统必须是可靠的。
+- Real-Time Operating System must be reliable.
+- 根据具体的应用，系统可能需要在没有人工干预的情况下长时间运行。
+- Depending on the application, the system might need to operate for long periods without human intervention.
+- 系统可能需要不同程度的可靠性。
+- Different degrees of reliability may be required.
+- 例如，一台数字太阳能计算器如果光线不足可能会自动重置，但该计算器仍被认为是可接受的。
+- For example, a digital solar-powered calculator might reset itself if it does not get enough light, yet the calculator might still be considered acceptable.
+
+### 2.2 Predictability / 可预测性
+- 因为许多嵌入式系统也是实时系统，满足时间要求是确保正常运行的关键。
+- Because many embedded systems are also real-time systems, meeting time requirements is key to ensuring proper operation.
+- 在这种情况下使用的 RTOS 需要具备一定程度的可预测性。
+- The RTOS used in this case needs to be predictable to a certain degree.
+- 确定性（Deterministic）一词用来描述具有可预测行为的实时操作系统，其中操作系统调用的完成发生在已知的时间帧内。
+- The term deterministic describes Real-Time Operating Systems (RTOSs) with predictable behavior, in which the completion of operating system calls occurs within known timeframes.
+- 开发者可以编写简单的基准程序来验证 RTOS 的确定性。
+- Developers can write simple benchmark programs to validate the determinism of an RTOS.
+- 确定性意味着需要更快的处理器。
+- Determinism means more faster processors.
+- 结果基于对特定 RTOS 调用的定时响应。
+- The result is based on timed responses to specific RTOS calls.
+- 在良好的确定性 RTOS 中，每种系统调用的响应时间方差非常小。
+- In a good deterministic RTOS, the variance of the response times for each type of system call is very small.
+
+### 2.3 Performance / 性能
+- 该需求规定嵌入式系统必须运行得足够快，以满足其时间约束。
+- This requirement dictates that an embedded system must perform fast enough to fulfill its timing requirements.
+- 处理器性能可以通过 MIPS（每秒百万条指令）来衡量。
+- Processor's performance can be measured by MIPS: million instructions per second.
+- 它可用于衡量系统的整体性能，即系统根据输入的传入生成输出的速率。
+- It may be used to measure the overall performance of a system, which is the rate at which a system can generate output based on the inputs coming in.
+- 逐调用方法（Call-by-call method）可用于测量 RTOS 的性能。
+- Call-by-call method may be used to measure RTOS performance.
+- 该方法在系统调用开始和完成时生成时间戳。
+- It produces timestamps when a system call starts and when it completes.
+
+### 2.4 Compactness / 紧凑性
+- 用于确定嵌入式系统的紧凑程度。
+- To determine how compact an embedded system be.
+- **应用设计约束**：设计约束的概念可以定义为在系统上限制用户操作的实践。
+- **Application design constraints**: The concept of constraints in design can be defined as the practice of limiting user actions on a system.
+- **成本约束**：成本约束指的是项目可用的预算金额。
+- **Cost constraints**: The cost constraint refers to the budgeted amount available for the project.
+- 例如，手机必须小巧、便携且成本低廉。
+- For example, a cell phone must be small, portable and low cost.
+- 这意味着需要限制系统内存，并限制应用程序和操作系统的体积大小。
+- This means limiting system memory and limiting the size of application and operating system.
+- 为了满足整体系统要求，设计师必须了解 RTOS 以及运行在其上的应用程序的静态和动态内存消耗。
+- To meet total system requirements, designers must understand both the static and dynamic memory consumption of the RTOS and the application that will run on it.
+- **静态内存**：静态内存分配是在相关程序执行之前的编译阶段进行的内存分配。
+- **Static memory**: Static memory allocation is the allocation of memory at compile-time before the associated program is executed.
+- **动态内存**：动态内存是在运行期间分配的内存。
+- **Dynamic memory**: Memory allocated during run-time.
+
+### 2.5 Scalability / 可扩展性
+- 由于 RTOS 可以用于各种各样的嵌入式系统中，它们必须能够放大或缩小以满足特定应用的需求。
+- RTOSs can be used in a wide variety of embedded systems, they must be able to scale up or down to meet application-specific requirements.
+- 根据所需功能的多少，RTOS 应该能够添加或删除模块化组件，包括文件系统和协议栈。
+- Depending on how much functionality is required, an RTOS should be capable of adding or deleting modular components, including file systems and protocol stacks.
+
+---
+
+## 3. RTOS Components / RTOS 的基本组件
+
+- **实时时钟 (Real-time clock)**：为进程调度提供时间信息。
+- **Real-time clock**: Provides information for process scheduling.
+- **中断处理程序 (Interrupt handler)**：管理非周期性的服务请求。
+- **Interrupt handler**: Manages aperiodic requests for service.
+- **调度器 (Scheduler)**：选择下一个要运行的进程。
+- **Scheduler**: Chooses the next process to be run.
+- **资源管理器 (Resource manager)**：分配内存和处理器资源。
+- **Resource manager**: Allocates memory and processor resources.
+- **派发器 (Dispatcher)**：开始执行进程。
+- **Dispatcher**: Starts process execution.
+
+---
+
+## 4. Categories of RTOS / RTOS 的分类
+
+### 4.1 Hard Real-Time System / 硬实时系统
+- 硬实时系统是指如果不按照时间规范产生结果，其运行就被判定为错误的系统。
+- A hard real-time system is a system whose operation is incorrect if results are not produced according to the timing specification.
+- **硬实时任务 (Hard real-time task)**：任务必须在截止时间（Deadline）之前或之时完成。
+- **Hard real-time task**: Task must complete before or at deadline.
+- 在截止时间之后完成该任务的价值为零。
+- Value of completing the task after deadline is zero.
+
+### 4.2 Soft Real-Time System / 软实时系统
+- 软实时系统是指如果没有按照指定的时间要求产生结果，系统的运行性能会下降（但不会直接判定为彻底失效）。
+- A soft real-time system is a system whose operation is degraded if results are not produced according to the specified timing requirements.
+- **软实时任务 (Soft real-time task)**：错过截止时间会带来惩罚/损失。
+- **Soft real-time task**: Missing deadline incurs a penalty.
+- 惩罚会随着延迟时间的增加而增加。
+- Penalty increases as tardiness increases.
+
+---
+
+## 5. Timing Analysis / 时间分析
+
+- 实时系统的正确性不仅取决于其输出的正确性，还取决于产生这些输出的时间。
+- The correctness of a real-time system depends not just on the correctness of its outputs but also on the time at which these outputs were produced.
+- 在时间分析中，你需要计算系统中每个进程必须执行的频率，以确保所有输入都能被及时处理，所有系统响应都能及时产生。
+- In a timing analysis, you calculate how often each process in the system must be executed to ensure that all inputs are processed and all system responses produced in a timely way.
+- 时间分析的结果用于决定每个进程应该以多大的频率执行，以及 RTOS 应该如何调度这些进程。
+- The results of the timing analysis are used to decide how frequently each process should execute and how these processes should be scheduled by the real-time operating system.
+
+### Factors in Timing Analysis / 时间分析的三要素
+- **截止时间 (Deadlines)**：系统必须完成刺激（Stimuli）处理并产生某些响应的时间。
+- **Deadlines**: The times by which stimuli must be processed and some response produced by the system.
+- **频率 (Frequency)**：进程每秒必须执行的次数，以确保它总是能满足其截止时间。
+- **Frequency**: The number of times per second that a process must execute so that you are confident that it can always meet its deadlines.
+- **执行时间 (Execution time)**：处理一个刺激并产生响应所需的时间。
+- **Execution time**: The time required to process a stimulus and produce a response.
+
+---
+
+## 6. Real-Time System Design Stages / 实时系统设计阶段
+
+- 实时系统必须对不同时间的刺激做出响应。
+- Real time system must respond to stimulus at different time.
+- 因此，它的架构必须经过组织，以便在收到刺激时立即将控制权转移给该刺激的适当处理程序。
+- Its architecture must therefore be organized so the control is transferred to the appropriate handler for that stimulus as soon as it is received.
+
+### Design Stages Steps / 设计步骤：
+1. **识别刺激与响应**：识别系统必须处理的刺激以及相关的响应。
+   - Identify the stimuli that the system must process and the associated responses.
+2. **识别时间约束**：对于每个刺激和相关响应，识别适用于刺激和响应处理的时间约束。
+   - For each stimulus and associated response, identify the timing constraints which apply to both stimulus and response processing.
+3. **聚合并发进程**：将刺激和响应处理聚合为若干个并发进程。
+   - Aggregate the stimulus and response processing into a number of concurrent processes.
+4. **设计计算算法**：对于每个刺激和响应，设计用于执行所需计算的算法。
+   - For each stimulus and response, design algorithm to carry out the required computations.
+5. **设计调度系统**：设计一个调度系统，以确保进程能够及时启动以满足其截止时间。
+   - Design a scheduling system which will ensure that processes are started in time to meet their deadlines.
+6. **集成与控制**：在实时操作系统的控制下集成整个系统。
+   - Integrate the system under the control of a real-time operating system.
+
+---
+
+## 7. Stimulus / Response Classification / 刺激与响应分类
+
+- 实时系统必须对不规则间隔发生的事件（刺激）做出响应。
+- Real-time systems have to respond to events occurring at irregular intervals.
+- 这些事件（或刺激）通常会导致系统转移到不同的状态，因此可用于状态机建模。
+- These events (or stimuli) often cause the system to move to a different state, thus may be used as a way of describing a state machine modeling real-time system.
+- 看待实时系统的一种方式是将其视为一个刺激/响应（Stimulus/Response）系统。
+- One way of looking at a real-time system is as a stimulus/response system.
+
+### Two Classes of Stimulus / 两类刺激：
+1. **周期性刺激 (Periodic Stimulus)**：
+   - 发生在可预测的时间间隔内。
+   - These occur at predictable time intervals.
+   - 例如：系统每隔 50ms 检查一次传感器，并根据传感器数值（刺激）采取行动（响应）。
+   - E.g., the system will examine a sensor every 50ms & take action (respond) depending on the sensor value (stimulus).
+
+2. **非周期性刺激 (Aperiodic Stimulus)**：
+   - 不规则地发生（通常使用计算机的中断机制发出信号）。
+   - These occur irregularly (usually signaled using the computer's interrupt mechanism).
+   - 例如：计算机系统中的 I/O 中断，表明 I/O 传输已完成且缓冲区中有可用数据。
+   - E.g., I/O interrupt in a computer system indicating that an I/O transfer was complete & that data was available in a buffer.
+
+---
+
+## 8. Burglar Alarm System Example / 防盗报警系统示例（刺激与响应表）
+
+- **刺激：清除报警** $\rightarrow$ **响应**：关闭所有正在运行的报警；关闭所有已开启的灯光。
+- Stimulus: Clear alarms $\rightarrow$ Response: Switch off all active alarms; switch off all lights that have been switched on.
+- **刺激：控制台紧急按钮按下** $\rightarrow$ **响应**：启动报警；开启控制台周围灯光；拨打报警电话。
+- Stimulus: Console panic button positive $\rightarrow$ Response: Initiate alarm; turn on lights around console; call police.
+- **刺激：电源故障** $\rightarrow$ **响应**：呼叫维修技术人员。
+- Stimulus: Power supply failure $\rightarrow$ Response: Call service technician.
+- **刺激：传感器故障** $\rightarrow$ **响应**：呼叫维修技术人员。
+- Stimulus: Sensor failure $\rightarrow$ Response: Call service technician.
+- **刺激：单个传感器触发** $\rightarrow$ **响应**：启动报警；开启触发传感器周围的灯光。
+- Stimulus: Single sensor positive $\rightarrow$ Response: Initiate alarm; turn on lights around site of positive sensor.
+- **刺激：两个或多个传感器触发** $\rightarrow$ **响应**：启动报警；开启触发传感器周围的灯光；呼叫警察并告知疑似入侵地点。
+- Stimulus: Two or more sensors positive $\rightarrow$ Response: Initiate alarm; turn on lights around sites of positive sensors; call police with location of suspected break-in.
+- **刺激：电压下降 10% 至 20%** $\rightarrow$ **响应**：切换至备用电池；运行电源测试。
+- Stimulus: Voltage drop of between 10% and 20% $\rightarrow$ Response: Switch to battery backup; run power supply test.
+- **刺激：电压下降超过 20%** $\rightarrow$ **响应**：切换至备用电池；启动报警；呼叫警察；运行电源测试。
+- Stimulus: Voltage drop of more than 20% $\rightarrow$ Response: Switch to battery backup; initiate alarm; call police; run power supply test.

@@ -1,0 +1,166 @@
+# Chapter 10: Software Evolution and Maintenance Notes (软件演化与维护复习笔记)
+
+## 1. Introduction - Software Evolution Process (引言 - 软件演化过程)
+
+### 1.1 Definition of Software Evolution (软件演化的定义)
+软件演化是指最初开发软件，并出于各种原因及时对其进行更新的过程[cite: 4]。
+Software Evolution is a term that refers to the process of developing software initially, and then timely updating it for various reasons[cite: 4].
+
+### 1.2 The Software Evolution Cycle (软件演化周期)
+演化始于需求收集阶段。
+Evolution starts from the requirement-gathering process.
+
+开发者会制作原型并展示给用户以获取早期反馈。
+Developers create a prototype of the intended software and show it to users to get early feedback.
+
+用户提出修改建议，从而引发多次连续的更新和维护，直到完成满意的软件。
+Users suggest changes, leading to consecutive updates and maintenance until the desired software is accomplished.
+
+从头开始重新开发软件以匹配新需求是不切实际的。
+Re-creating software from scratch to meet new requirements is not feasible.
+
+最可行且经济的解决方案是更新现有软件。
+The only feasible and economical solution is to update the existing software.
+
+### 1.3 Change Requests (变更请求)
+变更请求是来自用户、客户或管理层的系统修改请求。
+Change requests are requests for system changes from users, customers, or management.
+
+原则上，所有变更请求都应在维护过程中被仔细分析然后实施。
+In principle, all change requests should be carefully analysed as part of the maintenance process and then implemented.
+
+在实践中，某些变更请求必须紧急实施，例如：缺陷修复、系统环境变更以及紧急业务需求。
+In practice, some change requests must be implemented urgently, such as fault repair, system environment changes, and urgent business changes.
+
+---
+
+## 2. Software Maintenance (软件维护)
+
+### 2.1 Definition & Reasons for Change (软件维护定义与变更原因)
+软件维护是指软件交付给客户后对其进行修改和更新的过程。
+Software Maintenance refers to the process of modifying and updating a software system after it has been delivered to the customer.
+
+变更的主要原因包括：软件错误、安装新硬件以及客户的新需求。
+The primary reasons for changes include software errors, installation of new hardware, and customer needs.
+
+### 2.2 Types of Software Maintenance (软件维护的类型)
+* **Corrective Maintenance (纠错性维护):** 
+  通常在设备或系统发生故障后执行的维护任务。
+  This type of maintenance task or action is usually performed after equipment failure.
+* **Adaptive Maintenance (适应性维护):** 
+  修改软件系统以适应环境变化（如新硬件、新操作系统、政府政策和业务规则）。
+  Modifying the software system to adapt it to changes in the environment, such as hardware, OS, government policies, and business rules.
+* **Perfective Maintenance (完善性维护):** 
+  改进功能、性能、可靠性，并重构软件系统以提高可改性。
+  Improving functionality, performance, reliability, and restructuring the software system to improve changeability.
+
+### 2.3 Factors Affecting Maintenance Costs (影响维护成本的因素)
+* **Module Independence (模块独立性):** 高独立性意味着低成本。High independency leads to lower cost.
+* **Programming Language (编程语言):** 使用高级编程语言可降低维护成本。High-level programming languages reduce maintenance cost.
+* **Programming Style (编程风格):** 良好的代码结构可以降低成本。Good program structure leads to low cost.
+* **Validation & Testing (验证与测试):** 花费更多时间在测试上，可以减少错误并降低维护成本。More time spent in testing leads to fewer errors and lower cost.
+* **Documentation Quality (文档质量):** 优质文档带来良好的理解，从而降低成本。Good documentation quality leads to good understanding and lower cost.
+* **Configuration Management (配置管理技术):** 有效的技术便于跟踪所有版本，进而降低成本。Effective techniques make it easy to track all versions, reducing cost.
+* **Application Domain (应用领域):** 面对全新的应用领域由于缺乏理解会增加成本。A new application domain with less understanding leads to higher cost.
+* **Staff Stability (人员稳定性):** 重新分配新项目人员会增加成本，由原班人马维护则可降低成本。Reassigning new staff increases cost, while maintaining with the same staff lowers cost.
+* **Program Age & Dependency (程序年龄与依赖性):** 程序越老、对外部环境变化越依赖，维护成本越高。Older programs and higher environmental dependency lead to higher cost.
+* **Hardware Stability (硬件稳定性):** 如果硬件无需频繁更换，维护成本相对较低。If hardware does not need to change, cost is lower.
+
+### 2.4 Why Maintenance Cost is High? (为什么维护成本高？)
+维护人员通常缺乏经验且不熟悉应用领域。
+Maintenance staff are often relatively inexperienced and unfamiliar with the application domain.
+
+被维护的旧程序可能在很多年前开发，未采用现代软件工程技术，结构混乱且难以理解。
+Programs being maintained may have been developed years ago without modern software engineering techniques, making them unstructured and difficult to understand.
+
+对程序进行的修改可能会引入新缺陷，从而引发更多的变更请求。
+Changes made to a program may introduce new faults, which trigger further change requests.
+
+频繁修改会导致结构劣化，使得文档与代码脱节，系统更加难以理解。
+Repeated changes cause structure degradation and loss of documentation traceability, making the program hard to comprehend.
+
+---
+
+## 3. Software Reengineering & Reverse Engineering (软件再工程与逆向工程)
+
+### 3.1 Legacy Systems (遗留系统)
+遗留系统通常消耗了约 80% 的软件支出用于维护和演化。
+About 80% of software expenditure is spent on legacy system maintenance and evolution.
+
+遗留系统之所以存在，是因为其中包含未在其他地方记录的业务流程和知识，重新编写风险太大。
+Legacy systems exist because business procedures and system knowledge are not documented elsewhere, making rewriting too risky.
+
+遗留系统的主要问题是：结构差、文档过时或不一致。
+Main problems of legacy systems include poor structure, outdated documentation, and inconsistent documentation.
+
+### 3.2 Objectives of Software Reengineering (软件再工程的目标)
+软件再工程是指对现有的遗留系统进行重新实现，以使其更易于维护。
+Software reengineering is concerned with taking existing legacy systems and re-implementing them to make them more maintainable.
+
+主要目标是改进系统结构、生成新的系统文档，并使其更容易理解，从而降低未来维护成本。
+The main objectives are to improve system structure, create new system documentation, and make it easier to understand to reduce future maintenance costs.
+
+### 3.3 Main Activities in Software Reengineering (软件再工程的主要活动)
+
+1. **Source Code Translation (源代码翻译):**
+   将源代码翻译成另一种编程语言（例如从 Fortran 翻译到 C）。
+   Translating source code into another programming language (e.g., Fortran to C).
+   由于硬件平台更新、员工技能短缺或组织政策改变而需要翻译。
+   Needed due to hardware platform updates, staff skill shortages, or organizational policy changes.
+
+2. **Reverse Engineering (逆向工程):**
+   分析软件以恢复其设计和规格说明（文档）的过程。
+   The process of analyzing software with the objective of recovering its design and specification (documentation).
+   恢复的文档可用作新系统替代的需求规范，或者直接协助程序维护。
+   The recovered documentation serves as input for replacement requirement specifications or helps in program maintenance directly.
+
+3. **Program Structure Improvement (程序结构改进):**
+   重构控制结构，消除“意粉式（Spaghetti）”代码并简化复杂的条件判断。
+   Restructuring control logic, removing "spaghetti" program structures, and simplifying complex conditions.
+
+4. **Program Modularization (程序模块化):**
+   将相关部分进行分组并消除冗余代码。
+   Grouping related parts together and removing redundancy.
+   进行架构转化（例如将集中式系统转变为运行在分布式平台上）。
+   Performing architectural transformations (e.g., centralized system to distributed platform).
+
+5. **Data Re-engineering (数据再工程):**
+   解决数据命名问题、字段长度不一致、记录组织差、硬编码字面值以及缺少数据字典等问题。
+   Addressing data naming issues, field length discrepancies, poor record organization, hard-coded literals, and missing data dictionaries.
+   解决数据值的不一致性（例如：默认值、校验规则、单位、语义及负数处理不统一）。
+   Resolving data value inconsistencies (e.g., inconsistent default values, validation rules, units, semantics, and negative value handling).
+   将分散的文件整合并迁移到现代的关系型数据库管理系统（DBMS）中。
+   Migrating separated files into a modern Relational DBMS for better manageability.
+
+### 3.4 Difference: Reengineering vs. Reverse Engineering (再工程 vs 逆向工程的区别)
+软件再工程**不等于**逆向工程！
+Software re-engineering is NOT equal to reverse engineering!
+
+再工程的总体目标是改善系统结构、更新文档并提高可维护性。
+The main objective of re-engineering is to improve system structure, create documentation, and enhance maintainability.
+
+逆向工程的目标是从源代码中推导出系统的设计和规范，它通常只是软件再工程过程中的一个环节/子集。
+The objective of reverse engineering is to derive system design and specifications from source code, and it is normally just a part of the re-engineering process.
+
+### 3.5 Advantages & Disadvantages of Reengineering (再工程的优缺点)
+* **Advantages (优点):** 降低风险、降低成本、减少工作量、缩短开发时间、保留业务关键功能。Reduced risk, reduced cost, reduced effort, reduced development time, and preserving business-critical logic.
+* **Disadvantages (缺点):** 存在实际局限性、依赖工具支持、需要高度专业的工程知识。Practical limits, tool support limitations, and requirement of knowledge engineers.
+
+---
+
+## 4. Legacy System Management Strategy (遗遗系统管理策略)
+
+管理遗留系统主要有四种途径：
+There are four primary strategies for managing legacy systems:
+1. **Scrap the system (废弃系统):** 适用于低业务价值、低质量的系统。Scrap systems with low business value and low quality.
+2. **Leave it unchanged (保持原状):** 适用于高质量但低业务价值的系统。Leave high quality but low business value systems unchanged.
+3. **Re-engineer / Replace (再工程或替换):** 适用于低质量但高业务价值的系统。Re-engineer or replace systems with low quality but high business value.
+4. **Maintain (常规维护):** 适用于高质量且高业务价值的系统。Maintain systems with high quality and high business value.
+
+### Quick Matrix Summary (策略矩阵速记):
+| System Quality (系统质量) | Business Value (业务价值) | Recommended Strategy (建议策略) |
+| :--- | :--- | :--- |
+| **Low (低)** | **Low (低)** | Scrap (废弃) |
+| **High (高)** | **Low (低)** | Unchanged / Scrap if expensive (保持原状/若维护昂贵则废弃) |
+| **Low (低)** | **High (高)** | Re-engineer or Replace (再工程或替换) |
+| **High (高)** | **High (高)** | Maintain (继续常规维护) |

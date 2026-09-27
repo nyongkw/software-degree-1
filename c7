@@ -164,4 +164,6 @@ ensure services are delivered to the right place at the right time.[cite: 1]
 | :--- | :--- |
 | **系统组织 / System Organization** | 1. 仓库模型 (Repository Model)<br>2. 客户机-服务器模型 (Client-Server Model)<br>3. 分层模型 (Layered Model) |
 | **模块化分解 / Modular Decomposition** | 1. 面向对象分解 (Object-Oriented Decomposition)<br>2. 面向功能分解 (Function-Oriented Decomposition) |
-| **控制建模 / Control Modeling** | **1. 集中式控制 (Centralized Control)**<br>&nbsp;&nbsp;&nbsp;&nbsp;a. 调用-返回模型 (Call-Return Model)<br>&nbsp;&nbsp;&nbsp;&nbsp;b. 管理者模型 (Manager Model)<br>**2. 基于事件的控制 (Event-Based Control)**<br>&nbsp;&nbsp;&nbsp;&nbsp;a. 广播模型 (Broadcast Model)<br>&nbsp;&nbsp;&nbsp;&nbsp;b. 中断驱动模型 (Interrupt-Driven Model) |
+| **控制建模 / Control Modeling** | **1. 集中式控制 (Centralized Control)**<br>&nbsp;&nbsp;&nbsp;&nbsp;a. 调用-返回模型
+(Call-Return Model)<br>&nbsp;&nbsp;&nbsp;&nbsp;b. 管理者模型 (Manager Model)<br>**2. 基于事件的控制 (Event-Based Control)**<br>&nbsp;&nbsp;&nbsp;&nbsp;a. 
+广播模型 (Broadcast Model)<br>&nbsp;&nbsp;&nbsp;&nbsp;b. 中断驱动模型 (Interrupt-Driven Model) |

@@ -1,1 +1,162 @@
+# Chapter 5: Software Requirements (软件需求复习笔记)
 
+## 1. Introduction & Lesson Objectives (简介与课程目标)
+
+* 区分用户需求和系统需求。
+  Differentiate between User requirements and System requirements.
+* 区分功能需求和非功能需求。
+  Differentiate between Functional and Non-functional Requirement.
+* 解释为什么自然语言规范是不理想的。
+  Explain why natural language specification is not desirable.
+* 了解如何将需求组织在软件需求规格说明书（SRS）中。
+  Understand how requirements may be organised in a Software Requirements Specification (SRS).
+* 软件系统的需求规定了系统/软件应该做什么，并定义了对其运行和实现的限制。
+  Requirements for a software system set out what the system/software should do and define constraints on its operation and implementation.
+
+---
+
+## 2. Categories of Requirements (需求的分类)
+
+### 2.1 User Requirements (用户需求)
+* 用户需求是高层级的抽象需求。
+  User requirements are high-level abstract requirements.
+* 它们供参与使用和采购系统的人员使用。
+  They are intended for use by people involved in using and procuring the system.
+* 用户需求是用自然语言表达的声明，辅以易于理解的图表和表格，说明系统预期提供哪些服务以及必须遵循的限制条件。
+  User requirements are statements in natural language, with easy-to-understand diagrams and tables, of what services the system is expected to provide and the constraints under which it must operate.
+
+### 2.2 System Requirements (系统需求)
+* 系统需求也被软件设计师用作系统设计的起点，因此有时被称为“功能规范”。
+  System requirements are also used by software designers as the starting point for the system design, so they are sometimes called "functional specifications".
+* 它们可以是系统开发者与客户之间合同的基础。
+  They may be the basis of a contract between the system developer and customer.
+* 因此，系统需求应该是对整个系统完整且一致的规范说明。
+  Therefore should be complete and consistent specification of the whole system.
+* 系统需求是对系统功能、服务和运行约束更加精准和详细的描述。
+  System requirements are more precise and detail descriptions of the system's functions, services and operational constraints.
+* 它们可以用结构化的自然语言形式编写，并由系统模型和表格提供支持。
+  They may be written in structured form of natural language supported by system models and tables.
+
+---
+
+## 3. Problems with Natural Language Specification (自然语言规范的问题)
+
+* 用自然语言编写的用户需求存在 3 个主要问题。
+  3 types of major problem with user requirements written in natural language:
+
+1. **缺乏清晰度 (Lack of clarity)**
+   * 很难在不使文档冗长且难以阅读的情况下，以精准且无歧义的方式使用语言。
+     Difficult to use language in a precise & unambiguous way without making the document wordy & difficult to read.
+2. **需求混淆 (Requirements confusion)**
+   * 功能需求、非功能需求、系统目标和设计信息可能没有被清晰地区分开来。
+     Functional, non-functional requirements, system goals, design info may not be clearly distinguished.
+3. **需求合并/混杂 (Requirements amalgamation)**
+   * 多个不同的需求被表达为了单个需求。
+     Several requirements expressed as a single requirement.
+
+### Alternatives to Natural Language Specification (替代自然语言规范的方法)
+* **设计描述语言 (Design Description Languages - DDLs)**：用于描述系统或软件设计的架构、行为和结构的形式化语言。
+  Design Description Languages (DDLs) are formal languages used to describe the architecture, behavior, and structure of a system or software design.
+* **图形符号 (Graphical notations)**：用于以图形格式传递信息的视觉符号、图表或表示（例如：DFD、流程图、用例图、时序图、活动图等）。
+  Graphical notations are visual symbols, diagrams, or representations used to convey information in a graphical format (e.g., DFD, flowchart, use-case diagrams, sequence diagrams, activity diagrams etc.).
+* **数学规范 (Mathematical specifications)**：使用数学符号对系统、过程或算法的需求和属性进行形式化描述（例如：有限状态机或集合，如 Z 规范）。
+  Mathematical specifications are formal descriptions of the requirements and properties of a system, process, or algorithm using mathematical notation (e.g., finite-state machines, Z-specification).
+
+---
+
+## 4. Functional vs. Non-Functional Requirements (功能需求与非功能需求)
+
+### 4.1 Functional Requirements (功能需求)
+* 功能需求描述了系统应该做什么。
+  Functional requirements describe what the system should do.
+* 功能需求定义了系统必须执行的具体功能和操作，以满足业务和用户需求。
+  Functional requirements define the specific features and operations a system must perform to meet business and user needs.
+* 它们是对系统应提供的服务、系统应如何对特定输入做出反应以及系统在特定情况下应如何表现的说明。
+  These are statement of services the system should provide, how the system should react to particular inputs and how the system should behave in particular situation.
+* 在某些情况下，功能需求还可能明确指出系统**不应该**做什么。
+  In some cases, the functional requirements may also explicitly state what the system should not do.
+* **示例 (Examples):**
+  * 用户身份验证：系统必须允许用户使用用户名和密码登录。
+    User Authentication: The system must allow users to log in using a username and password.
+  * 搜索功能：软件应允许用户按名称或类别搜索产品。
+    Search Functionality: The software should enable users to search for products by name or category.
+  * 报告生成：系统应能够生成指定日期范围内的销售报告。
+    Report Generation: The system should be able to generate sales reports for a specified date range.
+
+### 4.2 Non-Functional Requirements (非功能需求)
+* 非功能需求描述了系统应如何执行任务，而不是它应该做什么。
+  Non-functional requirements describe how the software performs a task rather than what it should do.
+* 它们定义了质量属性、性能标准和约束条件。
+  They define the quality attributes, performance criteria, and constraints.
+* 非功能需求可能比功能需求更为关键；如果无法满足这些需求，系统将毫无用处。
+  Non-functional requirements may be more critical than functional requirements. If these are not met, the system is useless.
+
+#### Classifications of Non-Functional Requirements (非功能需求的分类)
+1. **产品需求 (Product requirements)**
+   * 指定交付的产品必须以特定方式表现的需求（例如：执行速度、可靠性等）。
+     Requirements which specify that the delivered product must behave in a particular way (e.g., execution speed, reliability, etc.).
+2. **组织需求 (Organizational requirements)**
+   * 作为组织政策和流程之后果的需求（例如：使用的流程标准、实现要求等）。
+     Requirements which are a consequence of organisational policies and procedures (e.g., process standards used, implementation requirements, etc.).
+3. **外部需求 (External requirements)**
+   * 源于系统及其开发过程之外的因素的需求（例如：互操作性要求、法律/法规要求等）。
+     Requirements which arise from factors which are external to the system and its development process (e.g., interoperability requirements, legislative requirements, etc.).
+
+* **示例 (Examples):**
+  * 性能 (Performance)：系统每秒应处理 1,000 笔交易。
+    Performance: The system should process 1,000 transactions per second.
+  * 可用性 (Usability)：软件应该易于使用并拥有用户友好的界面。
+    Usability: The software should be easy to use and have a user-friendly interface.
+  * 可靠性 (Reliability)：系统必须具备 99.9% 的正常运行时间。
+    Reliability: The system must have 99.9% uptime.
+  * 安全性 (Security)：数据在传输和存储过程中必须进行加密。
+    Security: Data must be encrypted during transmission and storage.
+
+---
+
+## 5. Software Requirements Document / SRS (软件需求文档)
+
+* 软件需求文档（有时称为 SRS - 软件需求规格说明书）是关于系统开发者被要求做什么的官方声明。
+  The software requirements document (sometimes known as SRS - software requirements specification) is the official statement of what is required of the system developer.
+* 它应该同时包含：系统的用户需求和系统需求的详细规范。
+  It should include both: the user requirements for a system and a detailed specification of the system requirements.
+* 该文档不是设计文档。
+  This document is not a design document.
+* 它应该阐明系统应该做什么，而不指定应该如何做。
+  It should set out what the system should do without specifying how it should be done.
+* 原则上，该文档中列出的需求应当是完整且一致的。
+  In principle, the requirements set out in this document ought to be complete and consistent.
+
+### Users of SRS (SRS 的使用者)
+* **系统客户 (System customers)**：指定需求并阅读需求以检查是否满足其需求；他们还提出需求变更。
+  Specify the requirements and read them to check that they meet their needs. They specify changes to the requirements.
+* **项目经理 (Project managers)**：使用需求文档来规划对系统的投标以及规划系统开发过程。
+  Use the requirements document to plan a bid for the system and to plan the system development process.
+* **系统工程师 (System engineers)**：使用需求来理解要开发什么系统。
+  Use the requirements to understand what system is to be developed.
+* **系统测试工程师 (System test engineers)**：使用需求来开发系统的验证测试。
+  Use the requirements to develop validation tests for the system.
+* **系统维护工程师 (System maintenance engineers)**：使用需求来帮助理解系统及其各部分之间的关系。
+  Use the requirements to help understand the system and the relationships between its parts.
+
+### Structure of SRS (SRS 的结构)
+1. **前言 (Preface)**：说明文档的读者群并版本历史。
+   Preface: Highlighting target audience and version history.
+2. **引言 (Introduction)**：包含目的、范围、概述和业务背景。
+   Introduction: Includes Purpose, Scope, Overview, and Business Context.
+3. **术语表 (Glossary)**：定义文档中使用的专业术语。
+   Glossary: Definition of terms.
+4. **用户需求定义 (User requirements definition)**：对用户需求的总体说明。
+   User requirements definition: General description of user requirements.
+5. **系统架构 (System architecture)**：概述高层级的系统架构。
+   System architecture: Overview of the system structure.
+6. **系统需求规范 (System requirements specification)**：包含详细的功能需求和非功能需求。
+   System requirements specification: Detailed Functional and Non-Functional requirements.
+7. **系统模型 (System models)**：显示系统组件与环境之间关系的结构化模型。
+   System models: Structural models defining system components and context.
+8. **系统演化 (System evolution)**：描述系统潜在的未来变更和假设。
+   System evolution: Description of potential future changes and assumptions.
+9. **附录 (Appendices)**：提供支持性文档和参考资料。
+   Appendices: Supporting documents and references.
+10. **索引 (Index)**：按字母顺序排列的主题和页码检索。
+    Index: Alphabetical listing of topics and page numbers.
